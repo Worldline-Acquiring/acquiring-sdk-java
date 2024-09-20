@@ -1,0 +1,16 @@
+com.worldline.acquiring.sdk.java
+com.worldline.acquiring.sdk.java.authentication
+com.worldline.acquiring.sdk.java.communication
+com.worldline.acquiring.sdk.java.domain
+com.worldline.acquiring.sdk.java.json
+com.worldline.acquiring.sdk.java.logging
+com.worldline.acquiring.sdk.java.v1
+com.worldline.acquiring.sdk.java.v1.acquirer
+com.worldline.acquiring.sdk.java.v1.acquirer.merchant
+com.worldline.acquiring.sdk.java.v1.acquirer.merchant.accountverifications
+com.worldline.acquiring.sdk.java.v1.acquirer.merchant.dynamiccurrencyconversion
+com.worldline.acquiring.sdk.java.v1.acquirer.merchant.payments
+com.worldline.acquiring.sdk.java.v1.acquirer.merchant.refunds
+com.worldline.acquiring.sdk.java.v1.acquirer.merchant.technicalreversals
+com.worldline.acquiring.sdk.java.v1.domain
+com.worldline.acquiring.sdk.java.v1.ping
