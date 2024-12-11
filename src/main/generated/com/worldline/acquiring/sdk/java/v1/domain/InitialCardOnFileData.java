@@ -25,6 +25,14 @@ public class InitialCardOnFileData {
     }
 
     /**
+     * Future use
+     */
+    public InitialCardOnFileData withFutureUse(String value) {
+        this.futureUse = value;
+        return this;
+    }
+
+    /**
      * Transaction type
      */
     public String getTransactionType() {
@@ -36,5 +44,13 @@ public class InitialCardOnFileData {
      */
     public void setTransactionType(String value) {
         this.transactionType = value;
+    }
+
+    /**
+     * Transaction type
+     */
+    public InitialCardOnFileData withTransactionType(String value) {
+        this.transactionType = value;
+        return this;
     }
 }

@@ -34,6 +34,14 @@ public class RateData {
     }
 
     /**
+     * The exchange rate
+     */
+    public RateData withExchangeRate(BigDecimal value) {
+        this.exchangeRate = value;
+        return this;
+    }
+
+    /**
      * The inverted exchange rate
      */
     public BigDecimal getInvertedExchangeRate() {
@@ -48,6 +56,14 @@ public class RateData {
     }
 
     /**
+     * The inverted exchange rate
+     */
+    public RateData withInvertedExchangeRate(BigDecimal value) {
+        this.invertedExchangeRate = value;
+        return this;
+    }
+
+    /**
      * The mark up applied on the rate (in percentage).
      */
     public BigDecimal getMarkUp() {
@@ -59,6 +75,14 @@ public class RateData {
      */
     public void setMarkUp(BigDecimal value) {
         this.markUp = value;
+    }
+
+    /**
+     * The mark up applied on the rate (in percentage).
+     */
+    public RateData withMarkUp(BigDecimal value) {
+        this.markUp = value;
+        return this;
     }
 
     /**
@@ -82,6 +106,17 @@ public class RateData {
     }
 
     /**
+     * The source of the rate the markup is based upon.
+     * If the cardholder and the merchant are based in Europe, the
+     * mark up is calculated based on the
+     * rates provided by the European Central Bank.
+     */
+    public RateData withMarkUpBasis(String value) {
+        this.markUpBasis = value;
+        return this;
+    }
+
+    /**
      * The date and time of the quotation
      */
     public ZonedDateTime getQuotationDateTime() {
@@ -93,5 +128,13 @@ public class RateData {
      */
     public void setQuotationDateTime(ZonedDateTime value) {
         this.quotationDateTime = value;
+    }
+
+    /**
+     * The date and time of the quotation
+     */
+    public RateData withQuotationDateTime(ZonedDateTime value) {
+        this.quotationDateTime = value;
+        return this;
     }
 }

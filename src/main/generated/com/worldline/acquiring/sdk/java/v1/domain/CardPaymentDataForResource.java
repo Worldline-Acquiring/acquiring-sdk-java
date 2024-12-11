@@ -8,8 +8,6 @@ public class CardPaymentDataForResource {
 
     private String brand;
 
-    private PointOfSaleData pointOfSaleData;
-
     /**
      * The card brand
      */
@@ -25,16 +23,10 @@ public class CardPaymentDataForResource {
     }
 
     /**
-     * Payment terminal request data
+     * The card brand
      */
-    public PointOfSaleData getPointOfSaleData() {
-        return pointOfSaleData;
-    }
-
-    /**
-     * Payment terminal request data
-     */
-    public void setPointOfSaleData(PointOfSaleData value) {
-        this.pointOfSaleData = value;
+    public CardPaymentDataForResource withBrand(String value) {
+        this.brand = value;
+        return this;
     }
 }

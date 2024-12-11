@@ -35,6 +35,11 @@ public class ApiPaymentResource {
         this.cardPaymentData = value;
     }
 
+    public ApiPaymentResource withCardPaymentData(CardPaymentDataForResource value) {
+        this.cardPaymentData = value;
+        return this;
+    }
+
     /**
      * Authorization approval code
      */
@@ -49,12 +54,25 @@ public class ApiPaymentResource {
         this.initialAuthorizationCode = value;
     }
 
+    /**
+     * Authorization approval code
+     */
+    public ApiPaymentResource withInitialAuthorizationCode(String value) {
+        this.initialAuthorizationCode = value;
+        return this;
+    }
+
     public List<SubOperation> getOperations() {
         return operations;
     }
 
     public void setOperations(List<SubOperation> value) {
         this.operations = value;
+    }
+
+    public ApiPaymentResource withOperations(List<SubOperation> value) {
+        this.operations = value;
+        return this;
     }
 
     /**
@@ -72,6 +90,14 @@ public class ApiPaymentResource {
     }
 
     /**
+     * the ID of the payment
+     */
+    public ApiPaymentResource withPaymentId(String value) {
+        this.paymentId = value;
+        return this;
+    }
+
+    /**
      * A set of references returned in responses
      */
     public ApiReferencesForResponses getReferences() {
@@ -83,6 +109,14 @@ public class ApiPaymentResource {
      */
     public void setReferences(ApiReferencesForResponses value) {
         this.references = value;
+    }
+
+    /**
+     * A set of references returned in responses
+     */
+    public ApiPaymentResource withReferences(ApiReferencesForResponses value) {
+        this.references = value;
+        return this;
     }
 
     /**
@@ -106,17 +140,66 @@ public class ApiPaymentResource {
     }
 
     /**
-     * The status of the payment, refund or credit transfer
+     * The duration to wait after the initial submission before retrying the payment.<br>
+     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
+     * This field is only present when the payment can be retried later.<br>
+     * PT0 means that the payment can be retried immediately.
+     */
+    public ApiPaymentResource withRetryAfter(String value) {
+        this.retryAfter = value;
+        return this;
+    }
+
+    /**
+     * The status of the payment, refund or credit transfer<br>
+     * Possible values are:
+     * <ul>
+     *   <li>AUTHORIZED</li>
+     *   <li>NOT_AUTHORIZED</li>
+     *   <li>PENDING</li>
+     *   <li>PENDING_CAPTURE</li>
+     *   <li>CONFIRMED</li>
+     *   <li>REVERSED</li>
+     *   <li>CANCELLED</li>
+     * </ul>
      */
     public String getStatus() {
         return status;
     }
 
     /**
-     * The status of the payment, refund or credit transfer
+     * The status of the payment, refund or credit transfer<br>
+     * Possible values are:
+     * <ul>
+     *   <li>AUTHORIZED</li>
+     *   <li>NOT_AUTHORIZED</li>
+     *   <li>PENDING</li>
+     *   <li>PENDING_CAPTURE</li>
+     *   <li>CONFIRMED</li>
+     *   <li>REVERSED</li>
+     *   <li>CANCELLED</li>
+     * </ul>
      */
     public void setStatus(String value) {
         this.status = value;
+    }
+
+    /**
+     * The status of the payment, refund or credit transfer<br>
+     * Possible values are:
+     * <ul>
+     *   <li>AUTHORIZED</li>
+     *   <li>NOT_AUTHORIZED</li>
+     *   <li>PENDING</li>
+     *   <li>PENDING_CAPTURE</li>
+     *   <li>CONFIRMED</li>
+     *   <li>REVERSED</li>
+     *   <li>CANCELLED</li>
+     * </ul>
+     */
+    public ApiPaymentResource withStatus(String value) {
+        this.status = value;
+        return this;
     }
 
     /**
@@ -134,6 +217,14 @@ public class ApiPaymentResource {
     }
 
     /**
+     * Timestamp of the status in format yyyy-MM-ddTHH:mm:ssZ
+     */
+    public ApiPaymentResource withStatusTimestamp(ZonedDateTime value) {
+        this.statusTimestamp = value;
+        return this;
+    }
+
+    /**
      * Amount for the operation.
      */
     public AmountData getTotalAuthorizedAmount() {
@@ -145,5 +236,13 @@ public class ApiPaymentResource {
      */
     public void setTotalAuthorizedAmount(AmountData value) {
         this.totalAuthorizedAmount = value;
+    }
+
+    /**
+     * Amount for the operation.
+     */
+    public ApiPaymentResource withTotalAuthorizedAmount(AmountData value) {
+        this.totalAuthorizedAmount = value;
+        return this;
     }
 }

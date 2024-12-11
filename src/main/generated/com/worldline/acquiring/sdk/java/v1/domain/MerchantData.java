@@ -35,6 +35,14 @@ public class MerchantData {
     }
 
     /**
+     * Street address
+     */
+    public MerchantData withAddress(String value) {
+        this.address = value;
+        return this;
+    }
+
+    /**
      * Address city
      */
     public String getCity() {
@@ -46,6 +54,14 @@ public class MerchantData {
      */
     public void setCity(String value) {
         this.city = value;
+    }
+
+    /**
+     * Address city
+     */
+    public MerchantData withCity(String value) {
+        this.city = value;
+        return this;
     }
 
     /**
@@ -63,6 +79,14 @@ public class MerchantData {
     }
 
     /**
+     * Address country code, ISO 3166 international standard
+     */
+    public MerchantData withCountryCode(String value) {
+        this.countryCode = value;
+        return this;
+    }
+
+    /**
      * Merchant category code (MCC)
      */
     public Integer getMerchantCategoryCode() {
@@ -74,6 +98,14 @@ public class MerchantData {
      */
     public void setMerchantCategoryCode(Integer value) {
         this.merchantCategoryCode = value;
+    }
+
+    /**
+     * Merchant category code (MCC)
+     */
+    public MerchantData withMerchantCategoryCode(Integer value) {
+        this.merchantCategoryCode = value;
+        return this;
     }
 
     /**
@@ -91,6 +123,14 @@ public class MerchantData {
     }
 
     /**
+     * Merchant name
+     */
+    public MerchantData withName(String value) {
+        this.name = value;
+        return this;
+    }
+
+    /**
      * Address postal code
      */
     public String getPostalCode() {
@@ -105,6 +145,14 @@ public class MerchantData {
     }
 
     /**
+     * Address postal code
+     */
+    public MerchantData withPostalCode(String value) {
+        this.postalCode = value;
+        return this;
+    }
+
+    /**
      * Address state code, only supplied if country is US or CA
      */
     public String getStateCode() {
@@ -116,5 +164,13 @@ public class MerchantData {
      */
     public void setStateCode(String value) {
         this.stateCode = value;
+    }
+
+    /**
+     * Address state code, only supplied if country is US or CA
+     */
+    public MerchantData withStateCode(String value) {
+        this.stateCode = value;
+        return this;
     }
 }

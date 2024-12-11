@@ -25,6 +25,14 @@ public class ECommerceDataForAccountVerification {
     }
 
     /**
+     * Address Verification System data
+     */
+    public ECommerceDataForAccountVerification withAddressVerificationData(AddressVerificationData value) {
+        this.addressVerificationData = value;
+        return this;
+    }
+
+    /**
      * 3D Secure data.<br>
      * Please note that if AAV or CAVV or equivalent is
      * missing, transaction should not be flagged as 3D Secure.
@@ -40,5 +48,15 @@ public class ECommerceDataForAccountVerification {
      */
     public void setThreeDSecure(ThreeDSecure value) {
         this.threeDSecure = value;
+    }
+
+    /**
+     * 3D Secure data.<br>
+     * Please note that if AAV or CAVV or equivalent is
+     * missing, transaction should not be flagged as 3D Secure.
+     */
+    public ECommerceDataForAccountVerification withThreeDSecure(ThreeDSecure value) {
+        this.threeDSecure = value;
+        return this;
     }
 }

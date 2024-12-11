@@ -28,12 +28,25 @@ public class DccProposal {
         this.originalAmount = value;
     }
 
+    /**
+     * Amount for the operation.
+     */
+    public DccProposal withOriginalAmount(AmountData value) {
+        this.originalAmount = value;
+        return this;
+    }
+
     public RateData getRate() {
         return rate;
     }
 
     public void setRate(RateData value) {
         this.rate = value;
+    }
+
+    public DccProposal withRate(RateData value) {
+        this.rate = value;
+        return this;
     }
 
     /**
@@ -51,6 +64,14 @@ public class DccProposal {
     }
 
     /**
+     * The rate reference ID
+     */
+    public DccProposal withRateReferenceId(String value) {
+        this.rateReferenceId = value;
+        return this;
+    }
+
+    /**
      * Amount for the operation.
      */
     public AmountData getResultingAmount() {
@@ -62,5 +83,13 @@ public class DccProposal {
      */
     public void setResultingAmount(AmountData value) {
         this.resultingAmount = value;
+    }
+
+    /**
+     * Amount for the operation.
+     */
+    public DccProposal withResultingAmount(AmountData value) {
+        this.resultingAmount = value;
+        return this;
     }
 }

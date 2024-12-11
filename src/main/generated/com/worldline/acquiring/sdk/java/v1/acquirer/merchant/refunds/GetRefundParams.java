@@ -34,6 +34,15 @@ public class GetRefundParams implements ParamRequest {
         this.returnOperations = value;
     }
 
+    /**
+     * If true, the response will contain the operations of the payment.
+     * False by default.
+     */
+    public GetRefundParams withReturnOperations(Boolean value) {
+        this.returnOperations = value;
+        return this;
+    }
+
     @Override
     public List<RequestParam> toRequestParameters() {
         List<RequestParam> result = new ArrayList<>();

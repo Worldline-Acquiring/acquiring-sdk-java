@@ -12,6 +12,8 @@ public class CardDataForDcc {
 
     private String cardCountryCode;
 
+    private String cardEntryMode;
+
     /**
      * Used to determine the currency of the card.
      * The first 12 digits of the card number.
@@ -35,6 +37,18 @@ public class CardDataForDcc {
     }
 
     /**
+     * Used to determine the currency of the card.
+     * The first 12 digits of the card number.
+     * The BIN number is on the first 6 or 8 digits.
+     * Some issuers are using subranges for different countries on digits
+     * 9-12.
+     */
+    public CardDataForDcc withBin(String value) {
+        this.bin = value;
+        return this;
+    }
+
+    /**
      * The card brand
      */
     public String getBrand() {
@@ -49,16 +63,54 @@ public class CardDataForDcc {
     }
 
     /**
-     * The country code of the card
+     * The card brand
+     */
+    public CardDataForDcc withBrand(String value) {
+        this.brand = value;
+        return this;
+    }
+
+    /**
+     * The ISO 3166 country code of the card
      */
     public String getCardCountryCode() {
         return cardCountryCode;
     }
 
     /**
-     * The country code of the card
+     * The ISO 3166 country code of the card
      */
     public void setCardCountryCode(String value) {
         this.cardCountryCode = value;
+    }
+
+    /**
+     * The ISO 3166 country code of the card
+     */
+    public CardDataForDcc withCardCountryCode(String value) {
+        this.cardCountryCode = value;
+        return this;
+    }
+
+    /**
+     * Card entry mode used in the transaction
+     */
+    public String getCardEntryMode() {
+        return cardEntryMode;
+    }
+
+    /**
+     * Card entry mode used in the transaction
+     */
+    public void setCardEntryMode(String value) {
+        this.cardEntryMode = value;
+    }
+
+    /**
+     * Card entry mode used in the transaction
+     */
+    public CardDataForDcc withCardEntryMode(String value) {
+        this.cardEntryMode = value;
+        return this;
     }
 }

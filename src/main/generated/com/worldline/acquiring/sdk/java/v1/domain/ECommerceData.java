@@ -27,6 +27,14 @@ public class ECommerceData {
     }
 
     /**
+     * Address Verification System data
+     */
+    public ECommerceData withAddressVerificationData(AddressVerificationData value) {
+        this.addressVerificationData = value;
+        return this;
+    }
+
+    /**
      * Strong customer authentication exemption request
      */
     public String getScaExemptionRequest() {
@@ -38,6 +46,14 @@ public class ECommerceData {
      */
     public void setScaExemptionRequest(String value) {
         this.scaExemptionRequest = value;
+    }
+
+    /**
+     * Strong customer authentication exemption request
+     */
+    public ECommerceData withScaExemptionRequest(String value) {
+        this.scaExemptionRequest = value;
+        return this;
     }
 
     /**
@@ -56,5 +72,15 @@ public class ECommerceData {
      */
     public void setThreeDSecure(ThreeDSecure value) {
         this.threeDSecure = value;
+    }
+
+    /**
+     * 3D Secure data.<br>
+     * Please note that if AAV or CAVV or equivalent is
+     * missing, transaction should not be flagged as 3D Secure.
+     */
+    public ECommerceData withThreeDSecure(ThreeDSecure value) {
+        this.threeDSecure = value;
+        return this;
     }
 }

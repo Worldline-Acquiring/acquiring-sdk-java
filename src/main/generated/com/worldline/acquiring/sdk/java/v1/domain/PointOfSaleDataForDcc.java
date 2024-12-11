@@ -11,17 +11,25 @@ public class PointOfSaleDataForDcc {
     private String terminalId;
 
     /**
-     * Country code of the terminal
+     * ISO 3166 Country code of the terminal
      */
     public String getTerminalCountryCode() {
         return terminalCountryCode;
     }
 
     /**
-     * Country code of the terminal
+     * ISO 3166 Country code of the terminal
      */
     public void setTerminalCountryCode(String value) {
         this.terminalCountryCode = value;
+    }
+
+    /**
+     * ISO 3166 Country code of the terminal
+     */
+    public PointOfSaleDataForDcc withTerminalCountryCode(String value) {
+        this.terminalCountryCode = value;
+        return this;
     }
 
     /**
@@ -36,5 +44,13 @@ public class PointOfSaleDataForDcc {
      */
     public void setTerminalId(String value) {
         this.terminalId = value;
+    }
+
+    /**
+     * The terminal ID
+     */
+    public PointOfSaleDataForDcc withTerminalId(String value) {
+        this.terminalId = value;
+        return this;
     }
 }

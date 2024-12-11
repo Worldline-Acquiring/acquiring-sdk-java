@@ -27,6 +27,14 @@ public class PlainCardData {
     }
 
     /**
+     * Card number (PAN, network token or DPAN).
+     */
+    public PlainCardData withCardNumber(String value) {
+        this.cardNumber = value;
+        return this;
+    }
+
+    /**
      * The security code indicated on the card<br>
      * Based on the card brand, it can be 3 or 4 digits long<br>
      * and have different names: CVV2, CVC2, CVN2, CID, CVC, CAV2, etc.
@@ -45,6 +53,16 @@ public class PlainCardData {
     }
 
     /**
+     * The security code indicated on the card<br>
+     * Based on the card brand, it can be 3 or 4 digits long<br>
+     * and have different names: CVV2, CVC2, CVN2, CID, CVC, CAV2, etc.
+     */
+    public PlainCardData withCardSecurityCode(String value) {
+        this.cardSecurityCode = value;
+        return this;
+    }
+
+    /**
      * Card or token expiry date in format MMYYYY
      */
     public String getExpiryDate() {
@@ -56,5 +74,13 @@ public class PlainCardData {
      */
     public void setExpiryDate(String value) {
         this.expiryDate = value;
+    }
+
+    /**
+     * Card or token expiry date in format MMYYYY
+     */
+    public PlainCardData withExpiryDate(String value) {
+        this.expiryDate = value;
+        return this;
     }
 }

@@ -25,9 +25,16 @@ public class NetworkTokenData {
     }
 
     /**
+     * Network token cryptogram
+     */
+    public NetworkTokenData withCryptogram(String value) {
+        this.cryptogram = value;
+        return this;
+    }
+
+    /**
      * Electronic Commerce Indicator<br>
-     * Value returned by the 3D Secure process that indicates the level of
-     * authentication.<br>
+     * Value that indicates the level of authentication.<br>
      * Contains different values depending on the brand.
      */
     public String getEci() {
@@ -36,11 +43,20 @@ public class NetworkTokenData {
 
     /**
      * Electronic Commerce Indicator<br>
-     * Value returned by the 3D Secure process that indicates the level of
-     * authentication.<br>
+     * Value that indicates the level of authentication.<br>
      * Contains different values depending on the brand.
      */
     public void setEci(String value) {
         this.eci = value;
+    }
+
+    /**
+     * Electronic Commerce Indicator<br>
+     * Value that indicates the level of authentication.<br>
+     * Contains different values depending on the brand.
+     */
+    public NetworkTokenData withEci(String value) {
+        this.eci = value;
+        return this;
     }
 }

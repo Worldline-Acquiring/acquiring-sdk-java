@@ -25,6 +25,14 @@ public class AddressVerificationData {
     }
 
     /**
+     * Cardholder street address
+     */
+    public AddressVerificationData withCardholderAddress(String value) {
+        this.cardholderAddress = value;
+        return this;
+    }
+
+    /**
      * Cardholder postal code, should be provided without spaces
      */
     public String getCardholderPostalCode() {
@@ -36,5 +44,13 @@ public class AddressVerificationData {
      */
     public void setCardholderPostalCode(String value) {
         this.cardholderPostalCode = value;
+    }
+
+    /**
+     * Cardholder postal code, should be provided without spaces
+     */
+    public AddressVerificationData withCardholderPostalCode(String value) {
+        this.cardholderPostalCode = value;
+        return this;
     }
 }

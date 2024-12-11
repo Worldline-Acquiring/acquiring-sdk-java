@@ -33,6 +33,15 @@ public class ThreeDSecure {
     }
 
     /**
+     * MasterCard AAV in original base64 encoding or Visa, DinersClub,
+     * UnionPay or JCB CAVV in either hexadecimal or base64 encoding
+     */
+    public ThreeDSecure withAuthenticationValue(String value) {
+        this.authenticationValue = value;
+        return this;
+    }
+
+    /**
      * 3D Secure 2.x directory server transaction ID
      */
     public String getDirectoryServerTransactionId() {
@@ -47,9 +56,16 @@ public class ThreeDSecure {
     }
 
     /**
+     * 3D Secure 2.x directory server transaction ID
+     */
+    public ThreeDSecure withDirectoryServerTransactionId(String value) {
+        this.directoryServerTransactionId = value;
+        return this;
+    }
+
+    /**
      * Electronic Commerce Indicator<br>
-     * Value returned by the 3D Secure process that indicates the level of
-     * authentication.<br>
+     * Value that indicates the level of authentication.<br>
      * Contains different values depending on the brand.
      */
     public String getEci() {
@@ -58,12 +74,21 @@ public class ThreeDSecure {
 
     /**
      * Electronic Commerce Indicator<br>
-     * Value returned by the 3D Secure process that indicates the level of
-     * authentication.<br>
+     * Value that indicates the level of authentication.<br>
      * Contains different values depending on the brand.
      */
     public void setEci(String value) {
         this.eci = value;
+    }
+
+    /**
+     * Electronic Commerce Indicator<br>
+     * Value that indicates the level of authentication.<br>
+     * Contains different values depending on the brand.
+     */
+    public ThreeDSecure withEci(String value) {
+        this.eci = value;
+        return this;
     }
 
     /**
@@ -81,6 +106,14 @@ public class ThreeDSecure {
     }
 
     /**
+     * 3D Secure type used in the transaction
+     */
+    public ThreeDSecure withThreeDSecureType(String value) {
+        this.threeDSecureType = value;
+        return this;
+    }
+
+    /**
      * 3D Secure version
      */
     public String getVersion() {
@@ -92,5 +125,13 @@ public class ThreeDSecure {
      */
     public void setVersion(String value) {
         this.version = value;
+    }
+
+    /**
+     * 3D Secure version
+     */
+    public ThreeDSecure withVersion(String value) {
+        this.version = value;
+        return this;
     }
 }

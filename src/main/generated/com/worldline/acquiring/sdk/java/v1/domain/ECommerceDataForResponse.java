@@ -11,30 +11,103 @@ public class ECommerceDataForResponse {
     private String cardSecurityCodeResult;
 
     /**
-     * Result of Address Verification Result
+     * Result of Address Verification Result<br>
+     * Possible values:
+     * <ul>
+     *   <li>MATCH</li>
+     *   <li>ADDRESS_MATCH_POSTAL_CODE_MISMATCH</li>
+     *   <li>ADDRESS_MISMATCH_POSTAL_CODE_MATCH</li>
+     *   <li>ADDRESS_MATCH_POSTAL_CODE_NOT_VERIFIED</li>
+     *   <li>ADDRESS_NOT_VERIFIED_POSTAL_CODE_MATCH</li>
+     *   <li>MISMATCH</li>
+     *   <li>ERROR</li>
+     *   <li>NOT_VERIFIED</li>
+     * </ul>
      */
     public String getAddressVerificationResult() {
         return addressVerificationResult;
     }
 
     /**
-     * Result of Address Verification Result
+     * Result of Address Verification Result<br>
+     * Possible values:
+     * <ul>
+     *   <li>MATCH</li>
+     *   <li>ADDRESS_MATCH_POSTAL_CODE_MISMATCH</li>
+     *   <li>ADDRESS_MISMATCH_POSTAL_CODE_MATCH</li>
+     *   <li>ADDRESS_MATCH_POSTAL_CODE_NOT_VERIFIED</li>
+     *   <li>ADDRESS_NOT_VERIFIED_POSTAL_CODE_MATCH</li>
+     *   <li>MISMATCH</li>
+     *   <li>ERROR</li>
+     *   <li>NOT_VERIFIED</li>
+     * </ul>
      */
     public void setAddressVerificationResult(String value) {
         this.addressVerificationResult = value;
     }
 
     /**
-     * Result of card security code check
+     * Result of Address Verification Result<br>
+     * Possible values:
+     * <ul>
+     *   <li>MATCH</li>
+     *   <li>ADDRESS_MATCH_POSTAL_CODE_MISMATCH</li>
+     *   <li>ADDRESS_MISMATCH_POSTAL_CODE_MATCH</li>
+     *   <li>ADDRESS_MATCH_POSTAL_CODE_NOT_VERIFIED</li>
+     *   <li>ADDRESS_NOT_VERIFIED_POSTAL_CODE_MATCH</li>
+     *   <li>MISMATCH</li>
+     *   <li>ERROR</li>
+     *   <li>NOT_VERIFIED</li>
+     * </ul>
+     */
+    public ECommerceDataForResponse withAddressVerificationResult(String value) {
+        this.addressVerificationResult = value;
+        return this;
+    }
+
+    /**
+     * Result of card security code check<br>
+     * Possible values:
+     * <ul>
+     *   <li>MATCH</li>
+     *   <li>MISMATCH</li>
+     *   <li>NOT_VERIFIED</li>
+     *   <li>OMITTED</li>
+     *   <li>MISSING</li>
+     * </ul>
      */
     public String getCardSecurityCodeResult() {
         return cardSecurityCodeResult;
     }
 
     /**
-     * Result of card security code check
+     * Result of card security code check<br>
+     * Possible values:
+     * <ul>
+     *   <li>MATCH</li>
+     *   <li>MISMATCH</li>
+     *   <li>NOT_VERIFIED</li>
+     *   <li>OMITTED</li>
+     *   <li>MISSING</li>
+     * </ul>
      */
     public void setCardSecurityCodeResult(String value) {
         this.cardSecurityCodeResult = value;
+    }
+
+    /**
+     * Result of card security code check<br>
+     * Possible values:
+     * <ul>
+     *   <li>MATCH</li>
+     *   <li>MISMATCH</li>
+     *   <li>NOT_VERIFIED</li>
+     *   <li>OMITTED</li>
+     *   <li>MISSING</li>
+     * </ul>
+     */
+    public ECommerceDataForResponse withCardSecurityCodeResult(String value) {
+        this.cardSecurityCodeResult = value;
+        return this;
     }
 }

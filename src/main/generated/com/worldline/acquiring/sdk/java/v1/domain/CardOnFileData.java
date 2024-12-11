@@ -20,18 +20,31 @@ public class CardOnFileData {
         this.initialCardOnFileData = value;
     }
 
+    public CardOnFileData withInitialCardOnFileData(InitialCardOnFileData value) {
+        this.initialCardOnFileData = value;
+        return this;
+    }
+
     /**
-     * Indicate wether this is the initial Card on File transaction or not
+     * Indicate whether this is the initial Card on File transaction or not
      */
     public Boolean getIsInitialTransaction() {
         return isInitialTransaction;
     }
 
     /**
-     * Indicate wether this is the initial Card on File transaction or not
+     * Indicate whether this is the initial Card on File transaction or not
      */
     public void setIsInitialTransaction(Boolean value) {
         this.isInitialTransaction = value;
+    }
+
+    /**
+     * Indicate whether this is the initial Card on File transaction or not
+     */
+    public CardOnFileData withIsInitialTransaction(Boolean value) {
+        this.isInitialTransaction = value;
+        return this;
     }
 
     public SubsequentCardOnFileData getSubsequentCardOnFileData() {
@@ -40,5 +53,10 @@ public class CardOnFileData {
 
     public void setSubsequentCardOnFileData(SubsequentCardOnFileData value) {
         this.subsequentCardOnFileData = value;
+    }
+
+    public CardOnFileData withSubsequentCardOnFileData(SubsequentCardOnFileData value) {
+        this.subsequentCardOnFileData = value;
+        return this;
     }
 }

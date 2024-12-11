@@ -27,17 +27,36 @@ public class SubsequentCardOnFileData {
     }
 
     /**
-     * Scheme transaction ID of initial transaction
+     * Card on file initiator
+     */
+    public SubsequentCardOnFileData withCardOnFileInitiator(String value) {
+        this.cardOnFileInitiator = value;
+        return this;
+    }
+
+    /**
+     * ID assigned by the scheme to identify a transaction through
+     * its whole lifecycle.
      */
     public String getInitialSchemeTransactionId() {
         return initialSchemeTransactionId;
     }
 
     /**
-     * Scheme transaction ID of initial transaction
+     * ID assigned by the scheme to identify a transaction through
+     * its whole lifecycle.
      */
     public void setInitialSchemeTransactionId(String value) {
         this.initialSchemeTransactionId = value;
+    }
+
+    /**
+     * ID assigned by the scheme to identify a transaction through
+     * its whole lifecycle.
+     */
+    public SubsequentCardOnFileData withInitialSchemeTransactionId(String value) {
+        this.initialSchemeTransactionId = value;
+        return this;
     }
 
     /**
@@ -52,5 +71,13 @@ public class SubsequentCardOnFileData {
      */
     public void setTransactionType(String value) {
         this.transactionType = value;
+    }
+
+    /**
+     * Transaction type
+     */
+    public SubsequentCardOnFileData withTransactionType(String value) {
+        this.transactionType = value;
+        return this;
     }
 }

@@ -29,6 +29,14 @@ public class TransactionDataForDcc {
     }
 
     /**
+     * Amount for the operation.
+     */
+    public TransactionDataForDcc withAmount(AmountData value) {
+        this.amount = value;
+        return this;
+    }
+
+    /**
      * The date and time of the transaction
      */
     public ZonedDateTime getTransactionTimestamp() {
@@ -43,6 +51,14 @@ public class TransactionDataForDcc {
     }
 
     /**
+     * The date and time of the transaction
+     */
+    public TransactionDataForDcc withTransactionTimestamp(ZonedDateTime value) {
+        this.transactionTimestamp = value;
+        return this;
+    }
+
+    /**
      * The transaction type
      */
     public String getTransactionType() {
@@ -54,5 +70,13 @@ public class TransactionDataForDcc {
      */
     public void setTransactionType(String value) {
         this.transactionType = value;
+    }
+
+    /**
+     * The transaction type
+     */
+    public TransactionDataForDcc withTransactionType(String value) {
+        this.transactionType = value;
+        return this;
     }
 }

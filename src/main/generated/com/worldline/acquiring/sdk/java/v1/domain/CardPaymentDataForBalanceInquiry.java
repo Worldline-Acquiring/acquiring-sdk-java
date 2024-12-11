@@ -4,7 +4,7 @@
 
 package com.worldline.acquiring.sdk.java.v1.domain;
 
-public class CardPaymentDataForVerification {
+public class CardPaymentDataForBalanceInquiry {
 
     private String brand;
 
@@ -14,13 +14,9 @@ public class CardPaymentDataForVerification {
 
     private String cardEntryMode;
 
-    private CardOnFileData cardOnFileData;
-
     private String cardholderVerificationMethod;
 
-    private ECommerceDataForAccountVerification ecommerceData;
-
-    private NetworkTokenData networkTokenData;
+    private ECommerceData ecommerceData;
 
     private PointOfSaleData pointOfSaleData;
 
@@ -43,7 +39,7 @@ public class CardPaymentDataForVerification {
     /**
      * The card brand
      */
-    public CardPaymentDataForVerification withBrand(String value) {
+    public CardPaymentDataForBalanceInquiry withBrand(String value) {
         this.brand = value;
         return this;
     }
@@ -65,7 +61,7 @@ public class CardPaymentDataForVerification {
     /**
      * The party responsible for the brand selection.
      */
-    public CardPaymentDataForVerification withBrandSelector(String value) {
+    public CardPaymentDataForBalanceInquiry withBrandSelector(String value) {
         this.brandSelector = value;
         return this;
     }
@@ -87,7 +83,7 @@ public class CardPaymentDataForVerification {
     /**
      * Card data in plain text
      */
-    public CardPaymentDataForVerification withCardData(PlainCardData value) {
+    public CardPaymentDataForBalanceInquiry withCardData(PlainCardData value) {
         this.cardData = value;
         return this;
     }
@@ -109,21 +105,8 @@ public class CardPaymentDataForVerification {
     /**
      * Card entry mode used in the transaction
      */
-    public CardPaymentDataForVerification withCardEntryMode(String value) {
+    public CardPaymentDataForBalanceInquiry withCardEntryMode(String value) {
         this.cardEntryMode = value;
-        return this;
-    }
-
-    public CardOnFileData getCardOnFileData() {
-        return cardOnFileData;
-    }
-
-    public void setCardOnFileData(CardOnFileData value) {
-        this.cardOnFileData = value;
-    }
-
-    public CardPaymentDataForVerification withCardOnFileData(CardOnFileData value) {
-        this.cardOnFileData = value;
         return this;
     }
 
@@ -144,7 +127,7 @@ public class CardPaymentDataForVerification {
     /**
      * Cardholder verification method used in the transaction
      */
-    public CardPaymentDataForVerification withCardholderVerificationMethod(String value) {
+    public CardPaymentDataForBalanceInquiry withCardholderVerificationMethod(String value) {
         this.cardholderVerificationMethod = value;
         return this;
     }
@@ -152,35 +135,22 @@ public class CardPaymentDataForVerification {
     /**
      * Request data for eCommerce transactions
      */
-    public ECommerceDataForAccountVerification getEcommerceData() {
+    public ECommerceData getEcommerceData() {
         return ecommerceData;
     }
 
     /**
      * Request data for eCommerce transactions
      */
-    public void setEcommerceData(ECommerceDataForAccountVerification value) {
+    public void setEcommerceData(ECommerceData value) {
         this.ecommerceData = value;
     }
 
     /**
      * Request data for eCommerce transactions
      */
-    public CardPaymentDataForVerification withEcommerceData(ECommerceDataForAccountVerification value) {
+    public CardPaymentDataForBalanceInquiry withEcommerceData(ECommerceData value) {
         this.ecommerceData = value;
-        return this;
-    }
-
-    public NetworkTokenData getNetworkTokenData() {
-        return networkTokenData;
-    }
-
-    public void setNetworkTokenData(NetworkTokenData value) {
-        this.networkTokenData = value;
-    }
-
-    public CardPaymentDataForVerification withNetworkTokenData(NetworkTokenData value) {
-        this.networkTokenData = value;
         return this;
     }
 
@@ -201,7 +171,7 @@ public class CardPaymentDataForVerification {
     /**
      * Request data for Point Of Sale (POS) or &quot;in person&quot; Transaction
      */
-    public CardPaymentDataForVerification withPointOfSaleData(PointOfSaleData value) {
+    public CardPaymentDataForBalanceInquiry withPointOfSaleData(PointOfSaleData value) {
         this.pointOfSaleData = value;
         return this;
     }
@@ -229,7 +199,7 @@ public class CardPaymentDataForVerification {
      * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
      * 216 for Google Pay and 217 for Samsung Pay
      */
-    public CardPaymentDataForVerification withWalletId(String value) {
+    public CardPaymentDataForBalanceInquiry withWalletId(String value) {
         this.walletId = value;
         return this;
     }

@@ -27,6 +27,14 @@ public class ApiReferencesForResponses {
     }
 
     /**
+     * (PAR) Unique identifier associated with a specific cardholder PAN
+     */
+    public ApiReferencesForResponses withPaymentAccountReference(String value) {
+        this.paymentAccountReference = value;
+        return this;
+    }
+
+    /**
      * Retrieval reference number for transaction, must be AN(12) if provided
      */
     public String getRetrievalReferenceNumber() {
@@ -38,6 +46,14 @@ public class ApiReferencesForResponses {
      */
     public void setRetrievalReferenceNumber(String value) {
         this.retrievalReferenceNumber = value;
+    }
+
+    /**
+     * Retrieval reference number for transaction, must be AN(12) if provided
+     */
+    public ApiReferencesForResponses withRetrievalReferenceNumber(String value) {
+        this.retrievalReferenceNumber = value;
+        return this;
     }
 
     /**
@@ -54,5 +70,14 @@ public class ApiReferencesForResponses {
      */
     public void setSchemeTransactionId(String value) {
         this.schemeTransactionId = value;
+    }
+
+    /**
+     * ID assigned by the scheme to identify a transaction through
+     * its whole lifecycle.
+     */
+    public ApiReferencesForResponses withSchemeTransactionId(String value) {
+        this.schemeTransactionId = value;
+        return this;
     }
 }

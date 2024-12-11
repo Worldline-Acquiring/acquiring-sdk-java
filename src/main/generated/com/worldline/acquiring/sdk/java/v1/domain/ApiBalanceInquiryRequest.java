@@ -6,40 +6,61 @@ package com.worldline.acquiring.sdk.java.v1.domain;
 
 import java.time.ZonedDateTime;
 
-public class ApiPaymentReversalRequest {
+public class ApiBalanceInquiryRequest {
 
-    private DccData dynamicCurrencyConversion;
+    private CardPaymentDataForBalanceInquiry cardPaymentData;
+
+    private MerchantData merchant;
 
     private String operationId;
 
-    private AmountData reversalAmount;
+    private PaymentReferences references;
 
     private TerminalData terminalData;
 
     private ZonedDateTime transactionTimestamp;
 
     /**
-     * Dynamic Currency Conversion (DCC) rate data from DCC lookup response.<br>
-     * Mandatory for DCC transactions.
+     * Card data
      */
-    public DccData getDynamicCurrencyConversion() {
-        return dynamicCurrencyConversion;
+    public CardPaymentDataForBalanceInquiry getCardPaymentData() {
+        return cardPaymentData;
     }
 
     /**
-     * Dynamic Currency Conversion (DCC) rate data from DCC lookup response.<br>
-     * Mandatory for DCC transactions.
+     * Card data
      */
-    public void setDynamicCurrencyConversion(DccData value) {
-        this.dynamicCurrencyConversion = value;
+    public void setCardPaymentData(CardPaymentDataForBalanceInquiry value) {
+        this.cardPaymentData = value;
     }
 
     /**
-     * Dynamic Currency Conversion (DCC) rate data from DCC lookup response.<br>
-     * Mandatory for DCC transactions.
+     * Card data
      */
-    public ApiPaymentReversalRequest withDynamicCurrencyConversion(DccData value) {
-        this.dynamicCurrencyConversion = value;
+    public ApiBalanceInquiryRequest withCardPaymentData(CardPaymentDataForBalanceInquiry value) {
+        this.cardPaymentData = value;
+        return this;
+    }
+
+    /**
+     * Merchant Data
+     */
+    public MerchantData getMerchant() {
+        return merchant;
+    }
+
+    /**
+     * Merchant Data
+     */
+    public void setMerchant(MerchantData value) {
+        this.merchant = value;
+    }
+
+    /**
+     * Merchant Data
+     */
+    public ApiBalanceInquiryRequest withMerchant(MerchantData value) {
+        this.merchant = value;
         return this;
     }
 
@@ -72,30 +93,30 @@ public class ApiPaymentReversalRequest {
      * It's used to detect duplicate requests or to reference an operation in
      * technical reversals.
      */
-    public ApiPaymentReversalRequest withOperationId(String value) {
+    public ApiBalanceInquiryRequest withOperationId(String value) {
         this.operationId = value;
         return this;
     }
 
     /**
-     * Amount to reverse. If not provided, the full amount will be reversed.
+     * Payment References
      */
-    public AmountData getReversalAmount() {
-        return reversalAmount;
+    public PaymentReferences getReferences() {
+        return references;
     }
 
     /**
-     * Amount to reverse. If not provided, the full amount will be reversed.
+     * Payment References
      */
-    public void setReversalAmount(AmountData value) {
-        this.reversalAmount = value;
+    public void setReferences(PaymentReferences value) {
+        this.references = value;
     }
 
     /**
-     * Amount to reverse. If not provided, the full amount will be reversed.
+     * Payment References
      */
-    public ApiPaymentReversalRequest withReversalAmount(AmountData value) {
-        this.reversalAmount = value;
+    public ApiBalanceInquiryRequest withReferences(PaymentReferences value) {
+        this.references = value;
         return this;
     }
 
@@ -107,7 +128,7 @@ public class ApiPaymentReversalRequest {
         this.terminalData = value;
     }
 
-    public ApiPaymentReversalRequest withTerminalData(TerminalData value) {
+    public ApiBalanceInquiryRequest withTerminalData(TerminalData value) {
         this.terminalData = value;
         return this;
     }
@@ -135,7 +156,7 @@ public class ApiPaymentReversalRequest {
      * It can be expressed in merchant time zone (ex: 2023-10-10T08:00+02:00)
      * or in UTC (ex: 2023-10-10T08:00Z)
      */
-    public ApiPaymentReversalRequest withTransactionTimestamp(ZonedDateTime value) {
+    public ApiBalanceInquiryRequest withTransactionTimestamp(ZonedDateTime value) {
         this.transactionTimestamp = value;
         return this;
     }

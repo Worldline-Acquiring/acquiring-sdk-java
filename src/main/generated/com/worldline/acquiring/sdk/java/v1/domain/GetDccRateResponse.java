@@ -29,6 +29,14 @@ public class GetDccRateResponse {
     }
 
     /**
+     * The disclaimer display
+     */
+    public GetDccRateResponse withDisclaimerDisplay(String value) {
+        this.disclaimerDisplay = value;
+        return this;
+    }
+
+    /**
      * The disclaimer receipt
      */
     public String getDisclaimerReceipt() {
@@ -42,12 +50,25 @@ public class GetDccRateResponse {
         this.disclaimerReceipt = value;
     }
 
+    /**
+     * The disclaimer receipt
+     */
+    public GetDccRateResponse withDisclaimerReceipt(String value) {
+        this.disclaimerReceipt = value;
+        return this;
+    }
+
     public DccProposal getProposal() {
         return proposal;
     }
 
     public void setProposal(DccProposal value) {
         this.proposal = value;
+    }
+
+    public GetDccRateResponse withProposal(DccProposal value) {
+        this.proposal = value;
+        return this;
     }
 
     /**
@@ -62,5 +83,13 @@ public class GetDccRateResponse {
      */
     public void setResult(String value) {
         this.result = value;
+    }
+
+    /**
+     * The result of the operation
+     */
+    public GetDccRateResponse withResult(String value) {
+        this.result = value;
+        return this;
     }
 }

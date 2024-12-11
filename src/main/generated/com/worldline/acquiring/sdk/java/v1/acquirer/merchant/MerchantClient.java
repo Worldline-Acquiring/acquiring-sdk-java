@@ -8,6 +8,7 @@ import java.util.Map;
 
 import com.worldline.acquiring.sdk.java.ApiResource;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.accountverifications.AccountVerificationsClient;
+import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.balanceinquiries.BalanceInquiriesClient;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.dynamiccurrencyconversion.DynamicCurrencyConversionClient;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.payments.PaymentsClient;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.refunds.RefundsClient;
@@ -47,6 +48,15 @@ public class MerchantClient extends ApiResource {
      */
     public AccountVerificationsClient accountVerifications() {
         return new AccountVerificationsClient(this, null);
+    }
+
+    /**
+     * Resource /processing/v1/{acquirerId}/{merchantId}/balance-inquiries
+     *
+     * @return BalanceInquiriesClient
+     */
+    public BalanceInquiriesClient balanceInquiries() {
+        return new BalanceInquiriesClient(this, null);
     }
 
     /**

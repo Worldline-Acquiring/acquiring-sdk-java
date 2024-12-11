@@ -33,6 +33,14 @@ public class ApiPaymentSummaryForResponse {
     }
 
     /**
+     * the ID of the payment
+     */
+    public ApiPaymentSummaryForResponse withPaymentId(String value) {
+        this.paymentId = value;
+        return this;
+    }
+
+    /**
      * A set of references returned in responses
      */
     public ApiReferencesForResponses getReferences() {
@@ -44,6 +52,14 @@ public class ApiPaymentSummaryForResponse {
      */
     public void setReferences(ApiReferencesForResponses value) {
         this.references = value;
+    }
+
+    /**
+     * A set of references returned in responses
+     */
+    public ApiPaymentSummaryForResponse withReferences(ApiReferencesForResponses value) {
+        this.references = value;
+        return this;
     }
 
     /**
@@ -67,17 +83,66 @@ public class ApiPaymentSummaryForResponse {
     }
 
     /**
-     * The status of the payment, refund or credit transfer
+     * The duration to wait after the initial submission before retrying the payment.<br>
+     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
+     * This field is only present when the payment can be retried later.<br>
+     * PT0 means that the payment can be retried immediately.
+     */
+    public ApiPaymentSummaryForResponse withRetryAfter(String value) {
+        this.retryAfter = value;
+        return this;
+    }
+
+    /**
+     * The status of the payment, refund or credit transfer<br>
+     * Possible values are:
+     * <ul>
+     *   <li>AUTHORIZED</li>
+     *   <li>NOT_AUTHORIZED</li>
+     *   <li>PENDING</li>
+     *   <li>PENDING_CAPTURE</li>
+     *   <li>CONFIRMED</li>
+     *   <li>REVERSED</li>
+     *   <li>CANCELLED</li>
+     * </ul>
      */
     public String getStatus() {
         return status;
     }
 
     /**
-     * The status of the payment, refund or credit transfer
+     * The status of the payment, refund or credit transfer<br>
+     * Possible values are:
+     * <ul>
+     *   <li>AUTHORIZED</li>
+     *   <li>NOT_AUTHORIZED</li>
+     *   <li>PENDING</li>
+     *   <li>PENDING_CAPTURE</li>
+     *   <li>CONFIRMED</li>
+     *   <li>REVERSED</li>
+     *   <li>CANCELLED</li>
+     * </ul>
      */
     public void setStatus(String value) {
         this.status = value;
+    }
+
+    /**
+     * The status of the payment, refund or credit transfer<br>
+     * Possible values are:
+     * <ul>
+     *   <li>AUTHORIZED</li>
+     *   <li>NOT_AUTHORIZED</li>
+     *   <li>PENDING</li>
+     *   <li>PENDING_CAPTURE</li>
+     *   <li>CONFIRMED</li>
+     *   <li>REVERSED</li>
+     *   <li>CANCELLED</li>
+     * </ul>
+     */
+    public ApiPaymentSummaryForResponse withStatus(String value) {
+        this.status = value;
+        return this;
     }
 
     /**
@@ -92,5 +157,13 @@ public class ApiPaymentSummaryForResponse {
      */
     public void setStatusTimestamp(ZonedDateTime value) {
         this.statusTimestamp = value;
+    }
+
+    /**
+     * Timestamp of the status in format yyyy-MM-ddTHH:mm:ssZ
+     */
+    public ApiPaymentSummaryForResponse withStatusTimestamp(ZonedDateTime value) {
+        this.statusTimestamp = value;
+        return this;
     }
 }
