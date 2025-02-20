@@ -69,7 +69,7 @@ public class ApiReversalResponse extends ApiActionResponse {
     }
 
     /**
-     * Numeric response code, e.g. 0000, 0005
+     * Numeric response code, e.g. 0, 5
      */
     @Override
     public ApiReversalResponse withResponseCode(String value) {

@@ -166,21 +166,21 @@ public class ApiBalanceInquiryResponse {
     }
 
     /**
-     * Numeric response code, e.g. 0000, 0005
+     * Numeric response code, e.g. 0, 5
      */
     public String getResponseCode() {
         return responseCode;
     }
 
     /**
-     * Numeric response code, e.g. 0000, 0005
+     * Numeric response code, e.g. 0, 5
      */
     public void setResponseCode(String value) {
         this.responseCode = value;
     }
 
     /**
-     * Numeric response code, e.g. 0000, 0005
+     * Numeric response code, e.g. 0, 5
      */
     public ApiBalanceInquiryResponse withResponseCode(String value) {
         this.responseCode = value;

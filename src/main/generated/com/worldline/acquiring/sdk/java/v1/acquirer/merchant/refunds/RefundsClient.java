@@ -19,10 +19,10 @@ import com.worldline.acquiring.sdk.java.v1.ValidationException;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiActionResponseForRefund;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiCaptureRequestForRefund;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiPaymentErrorResponse;
-import com.worldline.acquiring.sdk.java.v1.domain.ApiPaymentReversalRequest;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiRefundRequest;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiRefundResource;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiRefundResponse;
+import com.worldline.acquiring.sdk.java.v1.domain.ApiRefundReversalRequest;
 
 /**
  * Refunds client. Thread-safe.
@@ -203,7 +203,7 @@ public class RefundsClient extends ApiResource {
      * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/reverseRefundAuthorization">Reverse refund authorization</a>
      *
      * @param refundId String
-     * @param body ApiPaymentReversalRequest
+     * @param body ApiRefundReversalRequest
      * @return ApiActionResponseForRefund
      * @throws ValidationException if the request was not correct and couldn't be processed (HTTP status code 400)
      * @throws AuthorizationException if the request was not allowed (HTTP status code 403)
@@ -214,7 +214,7 @@ public class RefundsClient extends ApiResource {
      *            or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
      * @throws ApiException if the Worldline Acquiring platform returned any other error
      */
-    public ApiActionResponseForRefund reverseRefundAuthorization(String refundId, ApiPaymentReversalRequest body) {
+    public ApiActionResponseForRefund reverseRefundAuthorization(String refundId, ApiRefundReversalRequest body) {
         return reverseRefundAuthorization(refundId, body, null);
     }
 
@@ -223,7 +223,7 @@ public class RefundsClient extends ApiResource {
      * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/reverseRefundAuthorization">Reverse refund authorization</a>
      *
      * @param refundId String
-     * @param body ApiPaymentReversalRequest
+     * @param body ApiRefundReversalRequest
      * @param context CallContext
      * @return ApiActionResponseForRefund
      * @throws ValidationException if the request was not correct and couldn't be processed (HTTP status code 400)
@@ -235,7 +235,7 @@ public class RefundsClient extends ApiResource {
      *            or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
      * @throws ApiException if the Worldline Acquiring platform returned any other error
      */
-    public ApiActionResponseForRefund reverseRefundAuthorization(String refundId, ApiPaymentReversalRequest body, CallContext context) {
+    public ApiActionResponseForRefund reverseRefundAuthorization(String refundId, ApiRefundReversalRequest body, CallContext context) {
         Map<String, String> pathContext = new TreeMap<>();
         pathContext.put("refundId", refundId);
         String uri = instantiateUri("/processing/v1/{acquirerId}/{merchantId}/refunds/{refundId}/authorization-reversals", pathContext);

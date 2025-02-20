@@ -139,7 +139,7 @@ public class OAuth2Authenticator implements Authenticator {
         // While at the moment all scopes fit in one request, keep this code so we can easily add more token types if necessary.
         // The empty path will ensure that all paths will match, as each full path ends with an empty string.
         DEFAULT("", "processing_payment", "processing_refund", "processing_credittransfer", "processing_accountverification",
-                "processing_operation_reverse", "processing_dcc_rate", "services_ping"),
+                "processing_balanceinquiry", "processing_operation_reverse", "processing_dcc_rate", "services_ping"),
         ;
 
         private final String path;

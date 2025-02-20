@@ -20,6 +20,8 @@ public class ApiRefundRequest {
 
     private PaymentReferences references;
 
+    private TerminalData terminalData;
+
     private ZonedDateTime transactionTimestamp;
 
     /**
@@ -166,6 +168,19 @@ public class ApiRefundRequest {
      */
     public ApiRefundRequest withReferences(PaymentReferences value) {
         this.references = value;
+        return this;
+    }
+
+    public TerminalData getTerminalData() {
+        return terminalData;
+    }
+
+    public void setTerminalData(TerminalData value) {
+        this.terminalData = value;
+    }
+
+    public ApiRefundRequest withTerminalData(TerminalData value) {
+        this.terminalData = value;
         return this;
     }
 

@@ -20,6 +20,8 @@ public class CardPaymentDataForRefund {
 
     private NetworkTokenData networkTokenData;
 
+    private PointOfSaleData pointOfSaleData;
+
     private String walletId;
 
     /**
@@ -164,6 +166,28 @@ public class CardPaymentDataForRefund {
 
     public CardPaymentDataForRefund withNetworkTokenData(NetworkTokenData value) {
         this.networkTokenData = value;
+        return this;
+    }
+
+    /**
+     * Request data for Point Of Sale (POS) or &quot;in person&quot; Transaction
+     */
+    public PointOfSaleData getPointOfSaleData() {
+        return pointOfSaleData;
+    }
+
+    /**
+     * Request data for Point Of Sale (POS) or &quot;in person&quot; Transaction
+     */
+    public void setPointOfSaleData(PointOfSaleData value) {
+        this.pointOfSaleData = value;
+    }
+
+    /**
+     * Request data for Point Of Sale (POS) or &quot;in person&quot; Transaction
+     */
+    public CardPaymentDataForRefund withPointOfSaleData(PointOfSaleData value) {
+        this.pointOfSaleData = value;
         return this;
     }
 
