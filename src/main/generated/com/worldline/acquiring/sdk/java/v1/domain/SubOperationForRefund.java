@@ -22,8 +22,6 @@ public class SubOperationForRefund {
 
     private String responseCodeDescription;
 
-    private String retryAfter;
-
     /**
      * Amount for the operation.
      */
@@ -232,37 +230,6 @@ public class SubOperationForRefund {
      */
     public SubOperationForRefund withResponseCodeDescription(String value) {
         this.responseCodeDescription = value;
-        return this;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the operation.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the operation can be retried later.<br>
-     * PT0 means that the operation can be retried immediately.
-     */
-    public String getRetryAfter() {
-        return retryAfter;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the operation.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the operation can be retried later.<br>
-     * PT0 means that the operation can be retried immediately.
-     */
-    public void setRetryAfter(String value) {
-        this.retryAfter = value;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the operation.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the operation can be retried later.<br>
-     * PT0 means that the operation can be retried immediately.
-     */
-    public SubOperationForRefund withRetryAfter(String value) {
-        this.retryAfter = value;
         return this;
     }
 }

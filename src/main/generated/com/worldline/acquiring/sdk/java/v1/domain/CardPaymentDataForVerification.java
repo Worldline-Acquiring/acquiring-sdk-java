@@ -114,14 +114,23 @@ public class CardPaymentDataForVerification {
         return this;
     }
 
+    /**
+     * Card data can be kept on file to support various use cases. It requires you to flag the transaction correctly.
+     */
     public CardOnFileData getCardOnFileData() {
         return cardOnFileData;
     }
 
+    /**
+     * Card data can be kept on file to support various use cases. It requires you to flag the transaction correctly.
+     */
     public void setCardOnFileData(CardOnFileData value) {
         this.cardOnFileData = value;
     }
 
+    /**
+     * Card data can be kept on file to support various use cases. It requires you to flag the transaction correctly.
+     */
     public CardPaymentDataForVerification withCardOnFileData(CardOnFileData value) {
         this.cardOnFileData = value;
         return this;
@@ -207,27 +216,45 @@ public class CardPaymentDataForVerification {
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public String getWalletId() {
         return walletId;
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public void setWalletId(String value) {
         this.walletId = value;
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public CardPaymentDataForVerification withWalletId(String value) {
         this.walletId = value;

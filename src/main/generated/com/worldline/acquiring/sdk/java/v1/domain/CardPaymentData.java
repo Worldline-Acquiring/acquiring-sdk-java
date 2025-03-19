@@ -28,6 +28,8 @@ public class CardPaymentData {
 
     private PointOfSaleData pointOfSaleData;
 
+    private ServiceLocationData serviceLocationData;
+
     private String walletId;
 
     /**
@@ -162,14 +164,23 @@ public class CardPaymentData {
         return this;
     }
 
+    /**
+     * Card data can be kept on file to support various use cases. It requires you to flag the transaction correctly.
+     */
     public CardOnFileData getCardOnFileData() {
         return cardOnFileData;
     }
 
+    /**
+     * Card data can be kept on file to support various use cases. It requires you to flag the transaction correctly.
+     */
     public void setCardOnFileData(CardOnFileData value) {
         this.cardOnFileData = value;
     }
 
+    /**
+     * Card data can be kept on file to support various use cases. It requires you to flag the transaction correctly.
+     */
     public CardPaymentData withCardOnFileData(CardOnFileData value) {
         this.cardOnFileData = value;
         return this;
@@ -255,27 +266,70 @@ public class CardPaymentData {
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Request data object to describe the location where the cardholder received the service.
+     * Note: You should either provide the address or the geo coordinates.
+     */
+    public ServiceLocationData getServiceLocationData() {
+        return serviceLocationData;
+    }
+
+    /**
+     * Request data object to describe the location where the cardholder received the service.
+     * Note: You should either provide the address or the geo coordinates.
+     */
+    public void setServiceLocationData(ServiceLocationData value) {
+        this.serviceLocationData = value;
+    }
+
+    /**
+     * Request data object to describe the location where the cardholder received the service.
+     * Note: You should either provide the address or the geo coordinates.
+     */
+    public CardPaymentData withServiceLocationData(ServiceLocationData value) {
+        this.serviceLocationData = value;
+        return this;
+    }
+
+    /**
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public String getWalletId() {
         return walletId;
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public void setWalletId(String value) {
         this.walletId = value;
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public CardPaymentData withWalletId(String value) {
         this.walletId = value;

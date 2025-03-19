@@ -5,7 +5,7 @@
 
     <groupId>com.worldline-solutions.acquiring</groupId>
     <artifactId>acquiring-sdk-java</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>acquiring-sdk-java</name>

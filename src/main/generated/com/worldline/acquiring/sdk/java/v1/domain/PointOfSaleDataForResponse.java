@@ -4,11 +4,37 @@
 
 package com.worldline.acquiring.sdk.java.v1.domain;
 
+import java.util.List;
+
 public class PointOfSaleDataForResponse {
+
+    private List<EmvDataItem> emvData;
 
     private String panLast4Digits;
 
     private Integer pinRetryCounter;
+
+    /**
+     * EMV data of the card as tag/value pairs.
+     */
+    public List<EmvDataItem> getEmvData() {
+        return emvData;
+    }
+
+    /**
+     * EMV data of the card as tag/value pairs.
+     */
+    public void setEmvData(List<EmvDataItem> value) {
+        this.emvData = value;
+    }
+
+    /**
+     * EMV data of the card as tag/value pairs.
+     */
+    public PointOfSaleDataForResponse withEmvData(List<EmvDataItem> value) {
+        this.emvData = value;
+        return this;
+    }
 
     /**
      * Last 4 digits of the PAN

@@ -5,13 +5,12 @@
 package com.worldline.acquiring.sdk.java.v1.domain;
 
 import java.time.ZonedDateTime;
-import java.util.List;
 
 public class ApiPaymentResponse {
 
-    private CardPaymentDataForResponse cardPaymentData;
+    private AdditionalResponseData additionalResponseData;
 
-    private List<EmvDataItem> emvData;
+    private CardPaymentDataForResponse cardPaymentData;
 
     private String initialAuthorizationCode;
 
@@ -29,13 +28,33 @@ public class ApiPaymentResponse {
 
     private String responseCodeDescription;
 
-    private String retryAfter;
-
     private String status;
 
     private ZonedDateTime statusTimestamp;
 
     private AmountData totalAuthorizedAmount;
+
+    /**
+     * Additional response data
+     */
+    public AdditionalResponseData getAdditionalResponseData() {
+        return additionalResponseData;
+    }
+
+    /**
+     * Additional response data
+     */
+    public void setAdditionalResponseData(AdditionalResponseData value) {
+        this.additionalResponseData = value;
+    }
+
+    /**
+     * Additional response data
+     */
+    public ApiPaymentResponse withAdditionalResponseData(AdditionalResponseData value) {
+        this.additionalResponseData = value;
+        return this;
+    }
 
     public CardPaymentDataForResponse getCardPaymentData() {
         return cardPaymentData;
@@ -47,28 +66,6 @@ public class ApiPaymentResponse {
 
     public ApiPaymentResponse withCardPaymentData(CardPaymentDataForResponse value) {
         this.cardPaymentData = value;
-        return this;
-    }
-
-    /**
-     * EMV data of the card as tag/value pairs.
-     */
-    public List<EmvDataItem> getEmvData() {
-        return emvData;
-    }
-
-    /**
-     * EMV data of the card as tag/value pairs.
-     */
-    public void setEmvData(List<EmvDataItem> value) {
-        this.emvData = value;
-    }
-
-    /**
-     * EMV data of the card as tag/value pairs.
-     */
-    public ApiPaymentResponse withEmvData(List<EmvDataItem> value) {
-        this.emvData = value;
         return this;
     }
 
@@ -296,37 +293,6 @@ public class ApiPaymentResponse {
      */
     public ApiPaymentResponse withResponseCodeDescription(String value) {
         this.responseCodeDescription = value;
-        return this;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public String getRetryAfter() {
-        return retryAfter;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public void setRetryAfter(String value) {
-        this.retryAfter = value;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public ApiPaymentResponse withRetryAfter(String value) {
-        this.retryAfter = value;
         return this;
     }
 

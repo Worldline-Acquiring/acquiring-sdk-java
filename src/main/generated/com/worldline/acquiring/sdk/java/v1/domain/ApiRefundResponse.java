@@ -9,9 +9,11 @@ import java.util.List;
 
 public class ApiRefundResponse {
 
+    private AdditionalResponseData additionalResponseData;
+
     private String authorizationCode;
 
-    private CardPaymentDataForResource cardPaymentData;
+    private CardPaymentDataForResponse cardPaymentData;
 
     private List<EmvDataItem> emvData;
 
@@ -31,13 +33,33 @@ public class ApiRefundResponse {
 
     private String responseCodeDescription;
 
-    private String retryAfter;
-
     private String status;
 
     private ZonedDateTime statusTimestamp;
 
     private AmountData totalAuthorizedAmount;
+
+    /**
+     * Additional response data
+     */
+    public AdditionalResponseData getAdditionalResponseData() {
+        return additionalResponseData;
+    }
+
+    /**
+     * Additional response data
+     */
+    public void setAdditionalResponseData(AdditionalResponseData value) {
+        this.additionalResponseData = value;
+    }
+
+    /**
+     * Additional response data
+     */
+    public ApiRefundResponse withAdditionalResponseData(AdditionalResponseData value) {
+        this.additionalResponseData = value;
+        return this;
+    }
 
     /**
      * Authorization approval code
@@ -61,15 +83,15 @@ public class ApiRefundResponse {
         return this;
     }
 
-    public CardPaymentDataForResource getCardPaymentData() {
+    public CardPaymentDataForResponse getCardPaymentData() {
         return cardPaymentData;
     }
 
-    public void setCardPaymentData(CardPaymentDataForResource value) {
+    public void setCardPaymentData(CardPaymentDataForResponse value) {
         this.cardPaymentData = value;
     }
 
-    public ApiRefundResponse withCardPaymentData(CardPaymentDataForResource value) {
+    public ApiRefundResponse withCardPaymentData(CardPaymentDataForResponse value) {
         this.cardPaymentData = value;
         return this;
     }
@@ -323,37 +345,6 @@ public class ApiRefundResponse {
      */
     public ApiRefundResponse withResponseCodeDescription(String value) {
         this.responseCodeDescription = value;
-        return this;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public String getRetryAfter() {
-        return retryAfter;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public void setRetryAfter(String value) {
-        this.retryAfter = value;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public ApiRefundResponse withRetryAfter(String value) {
-        this.retryAfter = value;
         return this;
     }
 

@@ -6,9 +6,13 @@ package com.worldline.acquiring.sdk.java.v1.domain;
 
 public class ApiBalanceInquiryResponse {
 
+    private AdditionalResponseData additionalResponseData;
+
     private String authorizationCode;
 
     private AmountData availableAmount;
+
+    private CardPaymentDataForResponse cardPaymentData;
 
     private String operationId;
 
@@ -21,6 +25,28 @@ public class ApiBalanceInquiryResponse {
     private String responseCodeCategory;
 
     private String responseCodeDescription;
+
+    /**
+     * Additional response data
+     */
+    public AdditionalResponseData getAdditionalResponseData() {
+        return additionalResponseData;
+    }
+
+    /**
+     * Additional response data
+     */
+    public void setAdditionalResponseData(AdditionalResponseData value) {
+        this.additionalResponseData = value;
+    }
+
+    /**
+     * Additional response data
+     */
+    public ApiBalanceInquiryResponse withAdditionalResponseData(AdditionalResponseData value) {
+        this.additionalResponseData = value;
+        return this;
+    }
 
     /**
      * Authorization approval code
@@ -63,6 +89,19 @@ public class ApiBalanceInquiryResponse {
      */
     public ApiBalanceInquiryResponse withAvailableAmount(AmountData value) {
         this.availableAmount = value;
+        return this;
+    }
+
+    public CardPaymentDataForResponse getCardPaymentData() {
+        return cardPaymentData;
+    }
+
+    public void setCardPaymentData(CardPaymentDataForResponse value) {
+        this.cardPaymentData = value;
+    }
+
+    public ApiBalanceInquiryResponse withCardPaymentData(CardPaymentDataForResponse value) {
+        this.cardPaymentData = value;
         return this;
     }
 

@@ -10,6 +10,8 @@ public class PlainCardData {
 
     private String cardSecurityCode;
 
+    private Integer cardSequenceNumber;
+
     private String expiryDate;
 
     /**
@@ -59,6 +61,40 @@ public class PlainCardData {
      */
     public PlainCardData withCardSecurityCode(String value) {
         this.cardSecurityCode = value;
+        return this;
+    }
+
+    /**
+     * Card sequence number extracted from track2
+     * <ul>
+     *   <li>usually known only for on-us cards, as the position of the sequence number is issuer specific</li>
+     *   <li>for requests without track2 the card sequence number is usually stored in the EMV tag {@code 5F34}</li>
+     * </ul>
+     */
+    public Integer getCardSequenceNumber() {
+        return cardSequenceNumber;
+    }
+
+    /**
+     * Card sequence number extracted from track2
+     * <ul>
+     *   <li>usually known only for on-us cards, as the position of the sequence number is issuer specific</li>
+     *   <li>for requests without track2 the card sequence number is usually stored in the EMV tag {@code 5F34}</li>
+     * </ul>
+     */
+    public void setCardSequenceNumber(Integer value) {
+        this.cardSequenceNumber = value;
+    }
+
+    /**
+     * Card sequence number extracted from track2
+     * <ul>
+     *   <li>usually known only for on-us cards, as the position of the sequence number is issuer specific</li>
+     *   <li>for requests without track2 the card sequence number is usually stored in the EMV tag {@code 5F34}</li>
+     * </ul>
+     */
+    public PlainCardData withCardSequenceNumber(Integer value) {
+        this.cardSequenceNumber = value;
         return this;
     }
 

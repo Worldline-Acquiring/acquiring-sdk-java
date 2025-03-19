@@ -6,6 +6,8 @@ package com.worldline.acquiring.sdk.java.v1.domain;
 
 public class ApiAccountVerificationResponse {
 
+    private AdditionalResponseData additionalResponseData;
+
     private String authorizationCode;
 
     private CardPaymentDataForResponse cardPaymentData;
@@ -21,6 +23,28 @@ public class ApiAccountVerificationResponse {
     private String responseCodeCategory;
 
     private String responseCodeDescription;
+
+    /**
+     * Additional response data
+     */
+    public AdditionalResponseData getAdditionalResponseData() {
+        return additionalResponseData;
+    }
+
+    /**
+     * Additional response data
+     */
+    public void setAdditionalResponseData(AdditionalResponseData value) {
+        this.additionalResponseData = value;
+    }
+
+    /**
+     * Additional response data
+     */
+    public ApiAccountVerificationResponse withAdditionalResponseData(AdditionalResponseData value) {
+        this.additionalResponseData = value;
+        return this;
+    }
 
     /**
      * Authorization approval code

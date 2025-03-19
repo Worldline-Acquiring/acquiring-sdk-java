@@ -177,27 +177,45 @@ public class CardPaymentDataForBalanceInquiry {
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public String getWalletId() {
         return walletId;
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public void setWalletId(String value) {
         this.walletId = value;
     }
 
     /**
-     * Type of wallet, values are assigned by card schemes, e.g. 101
-     * for MasterPass in eCommerce, 102 for MasterPass NFC, 103 for Apple Pay,
-     * 216 for Google Pay and 217 for Samsung Pay
+     * Type of wallet, values are assigned by card schemes, e.g.
+     * <ul>
+     *   <li>101 for MasterPass in eCommerce</li>
+     *   <li>102 for MasterPass NFC</li>
+     *   <li>103 for Apple Pay</li>
+     *   <li>216 for Google Pay</li>
+     *   <li>217 for Samsung Pay</li>
+     *   <li>327 to indicate the usage of Network tokens in the transaction</li>
+     * </ul>
      */
     public CardPaymentDataForBalanceInquiry withWalletId(String value) {
         this.walletId = value;

@@ -19,8 +19,6 @@ public class ApiPaymentResource {
 
     private ApiReferencesForResponses references;
 
-    private String retryAfter;
-
     private String status;
 
     private ZonedDateTime statusTimestamp;
@@ -116,37 +114,6 @@ public class ApiPaymentResource {
      */
     public ApiPaymentResource withReferences(ApiReferencesForResponses value) {
         this.references = value;
-        return this;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public String getRetryAfter() {
-        return retryAfter;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public void setRetryAfter(String value) {
-        this.retryAfter = value;
-    }
-
-    /**
-     * The duration to wait after the initial submission before retrying the payment.<br>
-     * Expressed using ISO 8601 duration format, ex: PT2H for 2 hours.<br>
-     * This field is only present when the payment can be retried later.<br>
-     * PT0 means that the payment can be retried immediately.
-     */
-    public ApiPaymentResource withRetryAfter(String value) {
-        this.retryAfter = value;
         return this;
     }
 
