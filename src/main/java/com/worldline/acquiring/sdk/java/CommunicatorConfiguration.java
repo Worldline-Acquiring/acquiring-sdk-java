@@ -44,6 +44,8 @@ public class CommunicatorConfiguration {
 
     private String oauth2TokenUri;
 
+    private String oauth2Scopes;
+
     private ProxyConfiguration proxyConfiguration;
 
     private Set<String> httpsProtocols = new LinkedHashSet<>(DEFAULT_HTTPS_PROTOCOLS);
@@ -60,6 +62,7 @@ public class CommunicatorConfiguration {
             apiEndpoint       = getApiEndpoint(properties);
             authorizationType = AuthorizationType.valueOf(properties.getProperty("acquiring.api.authorizationType"));
             oauth2TokenUri    = properties.getProperty("acquiring.api.oauth2.tokenUri");
+            oauth2Scopes      = properties.getProperty("acquiring.api.oauth2.scopes");
             connectTimeout    = Integer.parseInt(properties.getProperty("acquiring.api.connectTimeout"));
             socketTimeout     = Integer.parseInt(properties.getProperty("acquiring.api.socketTimeout"));
             maxConnections    = getProperty(properties, "acquiring.api.maxConnections", DEFAULT_MAX_CONNECTIONS);
@@ -236,6 +239,19 @@ public class CommunicatorConfiguration {
 
     public CommunicatorConfiguration withOAuth2TokenUri(String oauth2TokenUri) {
         setOAuth2TokenUri(oauth2TokenUri);
+        return this;
+    }
+
+    public String getOAuth2Scopes() {
+        return oauth2Scopes;
+    }
+
+    public void setOAuth2Scopes(String oauth2Scopes) {
+        this.oauth2Scopes = oauth2Scopes;
+    }
+
+    public CommunicatorConfiguration withOAuth2Scopes(String oauth2Scopes) {
+        setOAuth2Scopes(oauth2Scopes);
         return this;
     }
 

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.function.UnaryOperator;
 
 import org.apache.http.HttpStatus;
 
@@ -37,7 +38,8 @@ public class OAuth2Authenticator implements Authenticator {
     private final int socketTimeout;
     private final ProxyConfiguration proxyConfiguration;
     private final Set<String> httpsProtocols;
-    private ConcurrentMap<TokenType, OAuth2AccessToken> accessTokens = new ConcurrentHashMap<>();
+    private final UnaryOperator<String> pathToScopesMapper;
+    private ConcurrentMap<String, OAuth2AccessToken> accessTokens = new ConcurrentHashMap<>();
 
     /**
      * Constructs a new OAuth2Authenticator instance using the provided CommunicatorConfiguration.
@@ -71,14 +73,20 @@ public class OAuth2Authenticator implements Authenticator {
         this.socketTimeout = communicatorConfiguration.getSocketTimeout();
         this.proxyConfiguration = communicatorConfiguration.getProxyConfiguration();
         this.httpsProtocols = communicatorConfiguration.getHttpsProtocols();
+
+        String oauth2Scopes = communicatorConfiguration.getOAuth2Scopes();
+        pathToScopesMapper = oauth2Scopes == null || oauth2Scopes.isEmpty()
+                ? path -> TokenType.of(path).scopes
+                : path -> oauth2Scopes;
     }
 
     @Override
     public String getAuthorization(String httpMethod, URI resourceUri, List<RequestHeader> requestHeaders) {
-        OAuth2AccessToken accessToken = accessTokens.compute(TokenType.of(resourceUri.getPath()), (tokenType, existingToken) -> {
+        String scopes = pathToScopesMapper.apply(resourceUri.getPath());
+        OAuth2AccessToken accessToken = accessTokens.compute(scopes, (s, existingToken) -> {
             try {
                 if (isAccessTokenNullOrExpired(existingToken)) {
-                    return getAccessToken(tokenType);
+                    return getAccessToken(scopes);
                 }
             } catch (IOException e) {
                 throw new IllegalStateException(e);
@@ -94,9 +102,9 @@ public class OAuth2Authenticator implements Authenticator {
         return accessToken == null || accessToken.getExpirationTime() < System.currentTimeMillis();
     }
 
-    private OAuth2AccessToken getAccessToken(TokenType tokenType) throws IOException {
+    private OAuth2AccessToken getAccessToken(String scopes) throws IOException {
         List<RequestHeader> requestHeaders = Collections.singletonList(new RequestHeader(CONTENT_TYPE_KEY, CONTENT_TYPE_VALUE));
-        String requestBody = getAccessTokenRequestBody(clientId, clientSecret, tokenType.scopes);
+        String requestBody = getAccessTokenRequestBody(clientId, clientSecret, scopes);
 
         try (Connection connection = new DefaultConnectionBuilder(connectTimeout, socketTimeout)
                 .withMaxConnections(MAX_CONNECTIONS)
@@ -138,16 +146,15 @@ public class OAuth2Authenticator implements Authenticator {
         // Only a limited amount of scopes may be sent in one request.
         // While at the moment all scopes fit in one request, keep this code so we can easily add more token types if necessary.
         // The empty path will ensure that all paths will match, as each full path ends with an empty string.
-        DEFAULT("", "processing_payment", "processing_refund", "processing_credittransfer", "processing_accountverification",
-                "processing_balanceinquiry", "processing_operation_reverse", "processing_dcc_rate", "services_ping"),
+        DEFAULT("", String.join(" ", OAuth2Scopes.all())),
         ;
 
         private final String path;
         private final String scopes;
 
-        TokenType(String pathMatch, String... scopes) {
+        TokenType(String pathMatch, String scopes) {
             this.path = pathMatch;
-            this.scopes = String.join(" ", scopes);
+            this.scopes = scopes;
         }
 
         static TokenType of(String fullPath) {

@@ -39,6 +39,7 @@ class CommunicatorConfigurationTest {
             assertTrue(configuration.isConnectionReuse());
             assertNull(configuration.getAuthorizationId());
             assertNull(configuration.getAuthorizationSecret());
+            assertNull(configuration.getOAuth2Scopes());
             assertNull(configuration.getProxyConfiguration());
             assertEquals(CommunicatorConfiguration.DEFAULT_HTTPS_PROTOCOLS, configuration.getHttpsProtocols());
             assertNull(configuration.getIntegrator());
@@ -64,6 +65,7 @@ class CommunicatorConfigurationTest {
             assertTrue(configuration.isConnectionReuse());
             assertNull(configuration.getAuthorizationId());
             assertNull(configuration.getAuthorizationSecret());
+            assertNull(configuration.getOAuth2Scopes());
 
             assertNotNull(configuration.getProxyConfiguration());
             ProxyConfiguration proxyConfiguration = configuration.getProxyConfiguration();
@@ -95,6 +97,7 @@ class CommunicatorConfigurationTest {
             assertTrue(configuration.isConnectionReuse());
             assertNull(configuration.getAuthorizationId());
             assertNull(configuration.getAuthorizationSecret());
+            assertNull(configuration.getOAuth2Scopes());
 
             assertNotNull(configuration.getProxyConfiguration());
             ProxyConfiguration proxyConfiguration = configuration.getProxyConfiguration();
@@ -124,6 +127,7 @@ class CommunicatorConfigurationTest {
             assertTrue(configuration.isConnectionReuse());
             assertNull(configuration.getAuthorizationId());
             assertNull(configuration.getAuthorizationSecret());
+            assertNull(configuration.getOAuth2Scopes());
             assertNull(configuration.getProxyConfiguration());
         }
 
@@ -146,6 +150,7 @@ class CommunicatorConfigurationTest {
             assertFalse(configuration.isConnectionReuse());
             assertNull(configuration.getAuthorizationId());
             assertNull(configuration.getAuthorizationSecret());
+            assertNull(configuration.getOAuth2Scopes());
             assertNull(configuration.getProxyConfiguration());
         }
 
@@ -237,6 +242,7 @@ class CommunicatorConfigurationTest {
             assertTrue(configuration.isConnectionReuse());
             assertNull(configuration.getAuthorizationId());
             assertNull(configuration.getAuthorizationSecret());
+            assertNull(configuration.getOAuth2Scopes());
             assertNull(configuration.getProxyConfiguration());
             assertEquals(new HashSet<>(Arrays.asList("TLSv1", "TLSv1.1", "TLSv1.2")), configuration.getHttpsProtocols());
             assertNull(configuration.getIntegrator());
@@ -265,12 +271,41 @@ class CommunicatorConfigurationTest {
             assertTrue(configuration.isConnectionReuse());
             assertNull(configuration.getAuthorizationId());
             assertNull(configuration.getAuthorizationSecret());
+            assertNull(configuration.getOAuth2Scopes());
             assertNull(configuration.getProxyConfiguration());
             assertEquals("Worldline.Integrator", configuration.getIntegrator());
             assertNotNull(configuration.getShoppingCartExtension());
             assertEquals("Worldline.Creator", configuration.getShoppingCartExtension().getCreator());
             assertEquals("Worldline.ShoppingCarts", configuration.getShoppingCartExtension().getName());
             assertEquals("1.0", configuration.getShoppingCartExtension().getVersion());
+        }
+
+        @Test
+        void testCustomOAuth2Scopes() {
+            Properties properties = new Properties();
+            properties.setProperty("acquiring.api.endpoint.host", "api.preprod.acquiring.worldline-solutions.com");
+            properties.setProperty("acquiring.api.authorizationType", "OAUTH2");
+            properties.setProperty("acquiring.api.oauth2.scopes", "processing_dcc_rate invalid_scope");
+            properties.setProperty("acquiring.api.connectTimeout", "20000");
+            properties.setProperty("acquiring.api.socketTimeout", "10000");
+
+            CommunicatorConfiguration configuration = new CommunicatorConfiguration(properties);
+
+            assertEquals(URI.create("https://api.preprod.acquiring.worldline-solutions.com"), configuration.getApiEndpoint());
+            assertEquals(AuthorizationType.OAUTH2, configuration.getAuthorizationType());
+            assertEquals(20000, configuration.getConnectTimeout());
+            assertEquals(10000, configuration.getSocketTimeout());
+            assertEquals(CommunicatorConfiguration.DEFAULT_MAX_CONNECTIONS, configuration.getMaxConnections());
+            assertTrue(configuration.isConnectionReuse());
+            assertNull(configuration.getAuthorizationId());
+            assertNull(configuration.getAuthorizationSecret());
+            assertNotNull(configuration.getOAuth2Scopes());
+            assertNull(configuration.getProxyConfiguration());
+            assertEquals(CommunicatorConfiguration.DEFAULT_HTTPS_PROTOCOLS, configuration.getHttpsProtocols());
+            assertNull(configuration.getIntegrator());
+            assertNull(configuration.getShoppingCartExtension());
+
+            assertEquals("processing_dcc_rate invalid_scope", configuration.getOAuth2Scopes());
         }
     }
 }
