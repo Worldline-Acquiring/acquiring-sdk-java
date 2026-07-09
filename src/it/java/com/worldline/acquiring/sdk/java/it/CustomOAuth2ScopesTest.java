@@ -18,7 +18,7 @@ import com.worldline.acquiring.sdk.java.Factory;
 import com.worldline.acquiring.sdk.java.authentication.OAuth2Exception;
 import com.worldline.acquiring.sdk.java.v1.AuthorizationException;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.dynamiccurrencyconversion.DynamicCurrencyConversionClient;
-import com.worldline.acquiring.sdk.java.v1.domain.GetDCCRateRequest;
+import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateRequest;
 import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateResponse;
 
 class CustomOAuth2ScopesTest extends ItTest {
@@ -31,7 +31,7 @@ class CustomOAuth2ScopesTest extends ItTest {
                 .withOAuth2Scopes(oauth2Scopes);
 
         try (Client client = Factory.createClient(configuration)) {
-            GetDCCRateRequest body = getDCCRateRequest();
+            GetDccRateRequest body = getDCCRateRequest();
 
             GetDccRateResponse response = client
                     .v1()
@@ -49,7 +49,7 @@ class CustomOAuth2ScopesTest extends ItTest {
                 .withOAuth2Scopes("services_ping");
 
         try (Client client = Factory.createClient(configuration)) {
-            GetDCCRateRequest body = getDCCRateRequest();
+            GetDccRateRequest body = getDCCRateRequest();
 
             DynamicCurrencyConversionClient dynamicCurrencyConversionClient = client
                     .v1()
@@ -67,7 +67,7 @@ class CustomOAuth2ScopesTest extends ItTest {
                 .withOAuth2Scopes("processing_dcc_rate invalid_scope");
 
         try (Client client = Factory.createClient(configuration)) {
-            GetDCCRateRequest body = getDCCRateRequest();
+            GetDccRateRequest body = getDCCRateRequest();
 
             DynamicCurrencyConversionClient dynamicCurrencyConversionClient = client
                     .v1()

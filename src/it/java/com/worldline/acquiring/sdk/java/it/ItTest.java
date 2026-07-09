@@ -20,7 +20,7 @@ import com.worldline.acquiring.sdk.java.v1.domain.ApiPaymentResource;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiPaymentResponse;
 import com.worldline.acquiring.sdk.java.v1.domain.CardDataForDcc;
 import com.worldline.acquiring.sdk.java.v1.domain.CardPaymentData;
-import com.worldline.acquiring.sdk.java.v1.domain.GetDCCRateRequest;
+import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateRequest;
 import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateResponse;
 import com.worldline.acquiring.sdk.java.v1.domain.PaymentReferences;
 import com.worldline.acquiring.sdk.java.v1.domain.PlainCardData;
@@ -169,11 +169,11 @@ abstract class ItTest {
         assertEquals("AUTHORIZED", response.getStatus());
     }
 
-    protected static GetDCCRateRequest getDCCRateRequest() {
+    protected static GetDccRateRequest getDCCRateRequest() {
         return getDCCRateRequest(200L);
     }
 
-    protected static GetDCCRateRequest getDCCRateRequest(long amount) {
+    protected static GetDccRateRequest getDCCRateRequest(long amount) {
         AmountData amountData = new AmountData();
         amountData.setAmount(amount);
         amountData.setCurrencyCode("GBP");
@@ -191,7 +191,7 @@ abstract class ItTest {
         cardDataForDcc.setBrand("VISA");
         cardDataForDcc.setBin("41766699");
 
-        GetDCCRateRequest request = new GetDCCRateRequest();
+        GetDccRateRequest request = new GetDccRateRequest();
         request.setTransaction(transactionDataForDcc);
         request.setOperationId(UUID.randomUUID().toString());
         request.setTargetCurrency("EUR");
@@ -201,7 +201,7 @@ abstract class ItTest {
         return request;
     }
 
-    protected static void assertDccRateResponse(GetDCCRateRequest body, GetDccRateResponse response) {
+    protected static void assertDccRateResponse(GetDccRateRequest body, GetDccRateResponse response) {
         assertNotNull(response.getProposal());
         assertNotNull(response.getProposal().getOriginalAmount());
         assertEqualAmounts(body.getTransaction().getAmount(), response.getProposal().getOriginalAmount());

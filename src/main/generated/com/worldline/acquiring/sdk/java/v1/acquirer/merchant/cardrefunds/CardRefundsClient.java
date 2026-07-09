@@ -2,7 +2,7 @@
  * This file was automatically generated.
  */
 
-package com.worldline.acquiring.sdk.java.v1.acquirer.merchant.refunds;
+package com.worldline.acquiring.sdk.java.v1.acquirer.merchant.cardrefunds;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -25,19 +25,19 @@ import com.worldline.acquiring.sdk.java.v1.domain.ApiRefundResponse;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiRefundReversalRequest;
 
 /**
- * Refunds client. Thread-safe.
+ * CardRefunds client. Thread-safe.
  */
-public class RefundsClient extends ApiResource {
+public class CardRefundsClient extends ApiResource {
 
     private static final ExceptionFactory EXCEPTION_FACTORY = new ExceptionFactory();
 
-    public RefundsClient(ApiResource parent, Map<String, String> pathContext) {
+    public CardRefundsClient(ApiResource parent, Map<String, String> pathContext) {
         super(parent, pathContext);
     }
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/processStandaloneRefund">Create standalone refund</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/processStandaloneRefund">Create standalone card refund</a>
      *
      * @param body ApiRefundRequest
      * @return ApiRefundResponse
@@ -56,7 +56,7 @@ public class RefundsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/processStandaloneRefund">Create standalone refund</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/processStandaloneRefund">Create standalone card refund</a>
      *
      * @param body ApiRefundRequest
      * @param context CallContext
@@ -89,7 +89,7 @@ public class RefundsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds/{refundId}
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/getRefund">Retrieve refund</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/getRefund">Retrieve card refund</a>
      *
      * @param refundId String
      * @param query GetRefundParams
@@ -109,7 +109,7 @@ public class RefundsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds/{refundId}
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/getRefund">Retrieve refund</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/getRefund">Retrieve card refund</a>
      *
      * @param refundId String
      * @param query GetRefundParams
@@ -144,7 +144,7 @@ public class RefundsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds/{refundId}/captures
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/captureRefund">Capture refund</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/captureRefund">Capture refund</a>
      *
      * @param refundId String
      * @param body ApiCaptureRequestForRefund
@@ -164,7 +164,7 @@ public class RefundsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds/{refundId}/captures
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/captureRefund">Capture refund</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/captureRefund">Capture refund</a>
      *
      * @param refundId String
      * @param body ApiCaptureRequestForRefund
@@ -200,7 +200,7 @@ public class RefundsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds/{refundId}/authorization-reversals
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/reverseRefundAuthorization">Reverse refund authorization</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/reverseRefundAuthorization">Reverse refund authorization</a>
      *
      * @param refundId String
      * @param body ApiRefundReversalRequest
@@ -220,7 +220,7 @@ public class RefundsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds/{refundId}/authorization-reversals
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/reverseRefundAuthorization">Reverse refund authorization</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Refunds/operation/reverseRefundAuthorization">Reverse refund authorization</a>
      *
      * @param refundId String
      * @param body ApiRefundReversalRequest

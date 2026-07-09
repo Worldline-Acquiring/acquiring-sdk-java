@@ -9,9 +9,9 @@ import java.util.Map;
 import com.worldline.acquiring.sdk.java.ApiResource;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.accountverifications.AccountVerificationsClient;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.balanceinquiries.BalanceInquiriesClient;
+import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.cardpayments.CardPaymentsClient;
+import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.cardrefunds.CardRefundsClient;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.dynamiccurrencyconversion.DynamicCurrencyConversionClient;
-import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.payments.PaymentsClient;
-import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.refunds.RefundsClient;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.technicalreversals.TechnicalReversalsClient;
 
 /**
@@ -26,19 +26,19 @@ public class MerchantClient extends ApiResource {
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments
      *
-     * @return PaymentsClient
+     * @return CardPaymentsClient
      */
-    public PaymentsClient payments() {
-        return new PaymentsClient(this, null);
+    public CardPaymentsClient cardPayments() {
+        return new CardPaymentsClient(this, null);
     }
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/refunds
      *
-     * @return RefundsClient
+     * @return CardRefundsClient
      */
-    public RefundsClient refunds() {
-        return new RefundsClient(this, null);
+    public CardRefundsClient cardRefunds() {
+        return new CardRefundsClient(this, null);
     }
 
     /**

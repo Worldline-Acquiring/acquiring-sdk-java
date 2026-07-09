@@ -10,6 +10,8 @@ public class ApiPaymentErrorResponse {
 
     private String instance;
 
+    private String requestId;
+
     private Integer status;
 
     private String title;
@@ -66,6 +68,28 @@ public class ApiPaymentErrorResponse {
      */
     public ApiPaymentErrorResponse withInstance(String value) {
         this.instance = value;
+        return this;
+    }
+
+    /**
+     * The unique Worldline identifier for the request that resulted in this response.
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    /**
+     * The unique Worldline identifier for the request that resulted in this response.
+     */
+    public void setRequestId(String value) {
+        this.requestId = value;
+    }
+
+    /**
+     * The unique Worldline identifier for the request that resulted in this response.
+     */
+    public ApiPaymentErrorResponse withRequestId(String value) {
+        this.requestId = value;
         return this;
     }
 

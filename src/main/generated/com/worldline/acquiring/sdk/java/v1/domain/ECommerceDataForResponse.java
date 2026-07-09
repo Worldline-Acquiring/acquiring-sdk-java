@@ -15,13 +15,12 @@ public class ECommerceDataForResponse {
      * Possible values:
      * <ul>
      *   <li>MATCH</li>
-     *   <li>ADDRESS_MATCH_POSTAL_CODE_MISMATCH</li>
-     *   <li>ADDRESS_MISMATCH_POSTAL_CODE_MATCH</li>
-     *   <li>ADDRESS_MATCH_POSTAL_CODE_NOT_VERIFIED</li>
-     *   <li>ADDRESS_NOT_VERIFIED_POSTAL_CODE_MATCH</li>
+     *   <li>ADDRESS_MATCH</li>
+     *   <li>POSTAL_CODE_MATCH</li>
      *   <li>MISMATCH</li>
-     *   <li>ERROR</li>
      *   <li>NOT_VERIFIED</li>
+     *   <li>OTHER</li>
+     *   <li>ERROR</li>
      * </ul>
      */
     public String getAddressVerificationResult() {
@@ -33,13 +32,12 @@ public class ECommerceDataForResponse {
      * Possible values:
      * <ul>
      *   <li>MATCH</li>
-     *   <li>ADDRESS_MATCH_POSTAL_CODE_MISMATCH</li>
-     *   <li>ADDRESS_MISMATCH_POSTAL_CODE_MATCH</li>
-     *   <li>ADDRESS_MATCH_POSTAL_CODE_NOT_VERIFIED</li>
-     *   <li>ADDRESS_NOT_VERIFIED_POSTAL_CODE_MATCH</li>
+     *   <li>ADDRESS_MATCH</li>
+     *   <li>POSTAL_CODE_MATCH</li>
      *   <li>MISMATCH</li>
-     *   <li>ERROR</li>
      *   <li>NOT_VERIFIED</li>
+     *   <li>OTHER</li>
+     *   <li>ERROR</li>
      * </ul>
      */
     public void setAddressVerificationResult(String value) {
@@ -51,13 +49,12 @@ public class ECommerceDataForResponse {
      * Possible values:
      * <ul>
      *   <li>MATCH</li>
-     *   <li>ADDRESS_MATCH_POSTAL_CODE_MISMATCH</li>
-     *   <li>ADDRESS_MISMATCH_POSTAL_CODE_MATCH</li>
-     *   <li>ADDRESS_MATCH_POSTAL_CODE_NOT_VERIFIED</li>
-     *   <li>ADDRESS_NOT_VERIFIED_POSTAL_CODE_MATCH</li>
+     *   <li>ADDRESS_MATCH</li>
+     *   <li>POSTAL_CODE_MATCH</li>
      *   <li>MISMATCH</li>
-     *   <li>ERROR</li>
      *   <li>NOT_VERIFIED</li>
+     *   <li>OTHER</li>
+     *   <li>ERROR</li>
      * </ul>
      */
     public ECommerceDataForResponse withAddressVerificationResult(String value) {

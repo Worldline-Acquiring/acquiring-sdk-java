@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import com.worldline.acquiring.sdk.java.Client;
 import com.worldline.acquiring.sdk.java.CommunicatorConfiguration;
 import com.worldline.acquiring.sdk.java.Factory;
-import com.worldline.acquiring.sdk.java.v1.domain.GetDCCRateRequest;
+import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateRequest;
 import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateResponse;
 
 class SystemProxyTest extends ItTest {
@@ -128,7 +128,7 @@ class SystemProxyTest extends ItTest {
                 .withProxyConfiguration(null);
 
         try (Client client = Factory.createClient(configuration)) {
-            GetDCCRateRequest body = getDCCRateRequest();
+            GetDccRateRequest body = getDCCRateRequest();
 
             GetDccRateResponse response = client
                     .v1()

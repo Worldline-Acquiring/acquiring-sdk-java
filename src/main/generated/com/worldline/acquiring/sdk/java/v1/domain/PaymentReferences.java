@@ -36,27 +36,30 @@ public class PaymentReferences {
     }
 
     /**
-     * Reference for the transaction to allow the merchant to reconcile their payments in our report files.<br>
+     * Reference for the transaction to allow the merchant to reconcile their payments in our report files
+     * and in their disputes.<br>
      * It is advised to submit a unique value per transaction.<br>
-     * The value provided here is returned in the baseTrxType/addlMercData element of the MRX file.
+     * The value is returned in the baseTrxType/addlMercData element of the MRX file.
      */
     public String getMerchantReference() {
         return merchantReference;
     }
 
     /**
-     * Reference for the transaction to allow the merchant to reconcile their payments in our report files.<br>
+     * Reference for the transaction to allow the merchant to reconcile their payments in our report files
+     * and in their disputes.<br>
      * It is advised to submit a unique value per transaction.<br>
-     * The value provided here is returned in the baseTrxType/addlMercData element of the MRX file.
+     * The value is returned in the baseTrxType/addlMercData element of the MRX file.
      */
     public void setMerchantReference(String value) {
         this.merchantReference = value;
     }
 
     /**
-     * Reference for the transaction to allow the merchant to reconcile their payments in our report files.<br>
+     * Reference for the transaction to allow the merchant to reconcile their payments in our report files
+     * and in their disputes.<br>
      * It is advised to submit a unique value per transaction.<br>
-     * The value provided here is returned in the baseTrxType/addlMercData element of the MRX file.
+     * The value is returned in the baseTrxType/addlMercData element of the MRX file.
      */
     public PaymentReferences withMerchantReference(String value) {
         this.merchantReference = value;

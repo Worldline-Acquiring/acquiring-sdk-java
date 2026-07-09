@@ -14,7 +14,7 @@ import com.worldline.acquiring.sdk.java.Communicator;
 import com.worldline.acquiring.sdk.java.CommunicatorConfiguration;
 import com.worldline.acquiring.sdk.java.Factory;
 import com.worldline.acquiring.sdk.java.v1.acquirer.merchant.dynamiccurrencyconversion.DynamicCurrencyConversionClient;
-import com.worldline.acquiring.sdk.java.v1.domain.GetDCCRateRequest;
+import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateRequest;
 
 class ConnectionPoolingTest extends ItTest {
 
@@ -65,7 +65,7 @@ class ConnectionPoolingTest extends ItTest {
     private final class ConvertDccRatesApiAction implements Callable<ConvertDccRateApiResult> {
 
         private final CountDownLatch barrier;
-        private final GetDCCRateRequest request;
+        private final GetDccRateRequest request;
         private final DynamicCurrencyConversionClient dynamicCurrencyConversionClient;
 
         @SuppressWarnings("resource")

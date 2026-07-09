@@ -16,7 +16,7 @@ import com.worldline.acquiring.sdk.java.v1.PlatformException;
 import com.worldline.acquiring.sdk.java.v1.ReferenceException;
 import com.worldline.acquiring.sdk.java.v1.ValidationException;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiPaymentErrorResponse;
-import com.worldline.acquiring.sdk.java.v1.domain.GetDCCRateRequest;
+import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateRequest;
 import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateResponse;
 
 /**
@@ -34,7 +34,7 @@ public class DynamicCurrencyConversionClient extends ApiResource {
      * Resource /services/v1/{acquirerId}/{merchantId}/dcc-rates
      * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Dynamic-Currency-Conversion/operation/requestDccRate">Request DCC rate</a>
      *
-     * @param body GetDCCRateRequest
+     * @param body GetDccRateRequest
      * @return GetDccRateResponse
      * @throws ValidationException if the request was not correct and couldn't be processed (HTTP status code 400)
      * @throws AuthorizationException if the request was not allowed (HTTP status code 403)
@@ -45,7 +45,7 @@ public class DynamicCurrencyConversionClient extends ApiResource {
      *            or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
      * @throws ApiException if the Worldline Acquiring platform returned any other error
      */
-    public GetDccRateResponse requestDccRate(GetDCCRateRequest body) {
+    public GetDccRateResponse requestDccRate(GetDccRateRequest body) {
         return requestDccRate(body, null);
     }
 
@@ -53,7 +53,7 @@ public class DynamicCurrencyConversionClient extends ApiResource {
      * Resource /services/v1/{acquirerId}/{merchantId}/dcc-rates
      * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Dynamic-Currency-Conversion/operation/requestDccRate">Request DCC rate</a>
      *
-     * @param body GetDCCRateRequest
+     * @param body GetDccRateRequest
      * @param context CallContext
      * @return GetDccRateResponse
      * @throws ValidationException if the request was not correct and couldn't be processed (HTTP status code 400)
@@ -65,7 +65,7 @@ public class DynamicCurrencyConversionClient extends ApiResource {
      *            or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
      * @throws ApiException if the Worldline Acquiring platform returned any other error
      */
-    public GetDccRateResponse requestDccRate(GetDCCRateRequest body, CallContext context) {
+    public GetDccRateResponse requestDccRate(GetDccRateRequest body, CallContext context) {
         String uri = instantiateUri("/services/v1/{acquirerId}/{merchantId}/dcc-rates", null);
         try {
             return communicator.post(

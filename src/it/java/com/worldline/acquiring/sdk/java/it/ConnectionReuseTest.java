@@ -6,7 +6,7 @@ import java.net.URISyntaxException;
 import org.junit.jupiter.api.Test;
 
 import com.worldline.acquiring.sdk.java.Client;
-import com.worldline.acquiring.sdk.java.v1.domain.GetDCCRateRequest;
+import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateRequest;
 import com.worldline.acquiring.sdk.java.v1.domain.GetDccRateResponse;
 
 class ConnectionReuseTest extends ItTest {
@@ -32,7 +32,7 @@ class ConnectionReuseTest extends ItTest {
     }
 
     private void test(Client client) {
-        GetDCCRateRequest body = getDCCRateRequest();
+        GetDccRateRequest body = getDCCRateRequest();
 
         GetDccRateResponse response = client
                 .v1()

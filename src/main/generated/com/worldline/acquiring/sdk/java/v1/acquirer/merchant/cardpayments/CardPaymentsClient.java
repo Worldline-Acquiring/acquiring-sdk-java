@@ -2,7 +2,7 @@
  * This file was automatically generated.
  */
 
-package com.worldline.acquiring.sdk.java.v1.acquirer.merchant.payments;
+package com.worldline.acquiring.sdk.java.v1.acquirer.merchant.cardpayments;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -30,19 +30,19 @@ import com.worldline.acquiring.sdk.java.v1.domain.ApiPaymentReversalRequest;
 import com.worldline.acquiring.sdk.java.v1.domain.ApiReversalResponse;
 
 /**
- * Payments client. Thread-safe.
+ * CardPayments client. Thread-safe.
  */
-public class PaymentsClient extends ApiResource {
+public class CardPaymentsClient extends ApiResource {
 
     private static final ExceptionFactory EXCEPTION_FACTORY = new ExceptionFactory();
 
-    public PaymentsClient(ApiResource parent, Map<String, String> pathContext) {
+    public CardPaymentsClient(ApiResource parent, Map<String, String> pathContext) {
         super(parent, pathContext);
     }
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/processPayment">Create payment</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/processPayment">Create payment</a>
      *
      * @param body ApiPaymentRequest
      * @return ApiPaymentResponse
@@ -61,7 +61,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/processPayment">Create payment</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/processPayment">Create payment</a>
      *
      * @param body ApiPaymentRequest
      * @param context CallContext
@@ -94,7 +94,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/getPaymentStatus">Retrieve payment</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/getPaymentStatus">Retrieve payment</a>
      *
      * @param paymentId String
      * @param query GetPaymentStatusParams
@@ -114,7 +114,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/getPaymentStatus">Retrieve payment</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/getPaymentStatus">Retrieve payment</a>
      *
      * @param paymentId String
      * @param query GetPaymentStatusParams
@@ -149,7 +149,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}/captures
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/simpleCaptureOfPayment">Capture payment</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/simpleCaptureOfPayment">Capture payment</a>
      *
      * @param paymentId String
      * @param body ApiCaptureRequest
@@ -169,7 +169,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}/captures
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/simpleCaptureOfPayment">Capture payment</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/simpleCaptureOfPayment">Capture payment</a>
      *
      * @param paymentId String
      * @param body ApiCaptureRequest
@@ -205,7 +205,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}/authorization-reversals
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/reverseAuthorization">Reverse authorization</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/reverseAuthorization">Reverse authorization</a>
      *
      * @param paymentId String
      * @param body ApiPaymentReversalRequest
@@ -225,7 +225,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}/authorization-reversals
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/reverseAuthorization">Reverse authorization</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/reverseAuthorization">Reverse authorization</a>
      *
      * @param paymentId String
      * @param body ApiPaymentReversalRequest
@@ -261,7 +261,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}/increments
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/incrementPayment">Increment authorization</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/incrementPayment">Increment authorization</a>
      *
      * @param paymentId String
      * @param body ApiIncrementRequest
@@ -281,7 +281,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}/increments
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/incrementPayment">Increment authorization</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/incrementPayment">Increment authorization</a>
      *
      * @param paymentId String
      * @param body ApiIncrementRequest
@@ -317,7 +317,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}/refunds
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/createRefund">Refund payment</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/createRefund">Refund card payment</a>
      *
      * @param paymentId String
      * @param body ApiPaymentRefundRequest
@@ -337,7 +337,7 @@ public class PaymentsClient extends ApiResource {
 
     /**
      * Resource /processing/v1/{acquirerId}/{merchantId}/payments/{paymentId}/refunds
-     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Payments/operation/createRefund">Refund payment</a>
+     * - <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/createRefund">Refund card payment</a>
      *
      * @param paymentId String
      * @param body ApiPaymentRefundRequest

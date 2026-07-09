@@ -4,7 +4,7 @@
 
 package com.worldline.acquiring.sdk.java.v1.domain;
 
-public class GetDCCRateRequest {
+public class GetDccRateRequest {
 
     private CardDataForDcc cardPaymentData;
 
@@ -26,7 +26,7 @@ public class GetDCCRateRequest {
         this.cardPaymentData = value;
     }
 
-    public GetDCCRateRequest withCardPaymentData(CardDataForDcc value) {
+    public GetDccRateRequest withCardPaymentData(CardDataForDcc value) {
         this.cardPaymentData = value;
         return this;
     }
@@ -60,7 +60,7 @@ public class GetDCCRateRequest {
      * It's used to detect duplicate requests or to reference an operation in
      * technical reversals.
      */
-    public GetDCCRateRequest withOperationId(String value) {
+    public GetDccRateRequest withOperationId(String value) {
         this.operationId = value;
         return this;
     }
@@ -73,7 +73,7 @@ public class GetDCCRateRequest {
         this.pointOfSaleData = value;
     }
 
-    public GetDCCRateRequest withPointOfSaleData(PointOfSaleDataForDcc value) {
+    public GetDccRateRequest withPointOfSaleData(PointOfSaleDataForDcc value) {
         this.pointOfSaleData = value;
         return this;
     }
@@ -101,7 +101,7 @@ public class GetDCCRateRequest {
      * This can be used in case of refund if you want to use the same rate
      * as the original transaction.
      */
-    public GetDCCRateRequest withRateReferenceId(String value) {
+    public GetDccRateRequest withRateReferenceId(String value) {
         this.rateReferenceId = value;
         return this;
     }
@@ -123,7 +123,7 @@ public class GetDCCRateRequest {
     /**
      * The currency to convert to
      */
-    public GetDCCRateRequest withTargetCurrency(String value) {
+    public GetDccRateRequest withTargetCurrency(String value) {
         this.targetCurrency = value;
         return this;
     }
@@ -136,7 +136,7 @@ public class GetDCCRateRequest {
         this.transaction = value;
     }
 
-    public GetDCCRateRequest withTransaction(TransactionDataForDcc value) {
+    public GetDccRateRequest withTransaction(TransactionDataForDcc value) {
         this.transaction = value;
         return this;
     }

@@ -60,7 +60,8 @@ public class CardOnFileData {
      * When you are using stored card you need to again specify the {@code transactionType}. All values are supported when the MERCHANT is
      * the initiator of the transaction. When the CARDHOLDER is the initiator of the transaction, only {@code UNSCHEDULED_CARD_ON_FILE} is
      * supported. For all cases when the MERCHANT is the initiator of the transaction, the {@code initialSchemeTransactionId} property
-     * is mandatory.
+     * is mandatory. In case of MASTERCARD transactions, the {@code initialSchemeTransactionLinkId} should also be provided to support
+     * better linking of related transaction activity.
      */
     public SubsequentCardOnFileData getSubsequentCardOnFileData() {
         return subsequentCardOnFileData;
@@ -70,7 +71,8 @@ public class CardOnFileData {
      * When you are using stored card you need to again specify the {@code transactionType}. All values are supported when the MERCHANT is
      * the initiator of the transaction. When the CARDHOLDER is the initiator of the transaction, only {@code UNSCHEDULED_CARD_ON_FILE} is
      * supported. For all cases when the MERCHANT is the initiator of the transaction, the {@code initialSchemeTransactionId} property
-     * is mandatory.
+     * is mandatory. In case of MASTERCARD transactions, the {@code initialSchemeTransactionLinkId} should also be provided to support
+     * better linking of related transaction activity.
      */
     public void setSubsequentCardOnFileData(SubsequentCardOnFileData value) {
         this.subsequentCardOnFileData = value;
@@ -80,7 +82,8 @@ public class CardOnFileData {
      * When you are using stored card you need to again specify the {@code transactionType}. All values are supported when the MERCHANT is
      * the initiator of the transaction. When the CARDHOLDER is the initiator of the transaction, only {@code UNSCHEDULED_CARD_ON_FILE} is
      * supported. For all cases when the MERCHANT is the initiator of the transaction, the {@code initialSchemeTransactionId} property
-     * is mandatory.
+     * is mandatory. In case of MASTERCARD transactions, the {@code initialSchemeTransactionLinkId} should also be provided to support
+     * better linking of related transaction activity.
      */
     public CardOnFileData withSubsequentCardOnFileData(SubsequentCardOnFileData value) {
         this.subsequentCardOnFileData = value;

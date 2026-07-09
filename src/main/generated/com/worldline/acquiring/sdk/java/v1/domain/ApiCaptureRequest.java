@@ -10,11 +10,15 @@ public class ApiCaptureRequest {
 
     private AmountData amount;
 
+    private CaptureAmountBreakdownData captureAmountBreakdownData;
+
     private Integer captureSequenceNumber;
 
     private DccData dynamicCurrencyConversion;
 
     private Boolean isFinal;
+
+    private MarketplaceData marketplaceData;
 
     private String operationId;
 
@@ -43,6 +47,34 @@ public class ApiCaptureRequest {
      */
     public ApiCaptureRequest withAmount(AmountData value) {
         this.amount = value;
+        return this;
+    }
+
+    /**
+     * Additional data regarding the breakdown of the capture amount. This can include amounts such as tip.
+     * The amounts specified are included in the total capture {@code amount}, the information is provided
+     * for data enrichment and reconciliation purposes.
+     */
+    public CaptureAmountBreakdownData getCaptureAmountBreakdownData() {
+        return captureAmountBreakdownData;
+    }
+
+    /**
+     * Additional data regarding the breakdown of the capture amount. This can include amounts such as tip.
+     * The amounts specified are included in the total capture {@code amount}, the information is provided
+     * for data enrichment and reconciliation purposes.
+     */
+    public void setCaptureAmountBreakdownData(CaptureAmountBreakdownData value) {
+        this.captureAmountBreakdownData = value;
+    }
+
+    /**
+     * Additional data regarding the breakdown of the capture amount. This can include amounts such as tip.
+     * The amounts specified are included in the total capture {@code amount}, the information is provided
+     * for data enrichment and reconciliation purposes.
+     */
+    public ApiCaptureRequest withCaptureAmountBreakdownData(CaptureAmountBreakdownData value) {
+        this.captureAmountBreakdownData = value;
         return this;
     }
 
@@ -115,6 +147,34 @@ public class ApiCaptureRequest {
      */
     public ApiCaptureRequest withIsFinal(Boolean value) {
         this.isFinal = value;
+        return this;
+    }
+
+    /**
+     * Additional data for marketplace transactions. Required when capturing VISA payments on behalf of
+     * sellers that are located in a different region than the marketplace. We advise marketplaces to
+     * always provide this data to ensure optimal processing of the transactions.
+     */
+    public MarketplaceData getMarketplaceData() {
+        return marketplaceData;
+    }
+
+    /**
+     * Additional data for marketplace transactions. Required when capturing VISA payments on behalf of
+     * sellers that are located in a different region than the marketplace. We advise marketplaces to
+     * always provide this data to ensure optimal processing of the transactions.
+     */
+    public void setMarketplaceData(MarketplaceData value) {
+        this.marketplaceData = value;
+    }
+
+    /**
+     * Additional data for marketplace transactions. Required when capturing VISA payments on behalf of
+     * sellers that are located in a different region than the marketplace. We advise marketplaces to
+     * always provide this data to ensure optimal processing of the transactions.
+     */
+    public ApiCaptureRequest withMarketplaceData(MarketplaceData value) {
+        this.marketplaceData = value;
         return this;
     }
 

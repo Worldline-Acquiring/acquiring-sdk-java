@@ -2,7 +2,7 @@
  * This file was automatically generated.
  */
 
-package com.worldline.acquiring.sdk.java.v1.acquirer.merchant.refunds;
+package com.worldline.acquiring.sdk.java.v1.acquirer.merchant.cardpayments;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +12,9 @@ import com.worldline.acquiring.sdk.java.communication.RequestParam;
 
 /**
  * Query parameters for
- * <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Refunds/operation/getRefund">Retrieve refund</a>
+ * <a href="https://docs.acquiring.worldline-solutions.com/api-reference#tag/Card-Payments/operation/getPaymentStatus">Retrieve payment</a>
  */
-public class GetRefundParams implements ParamRequest {
+public class GetPaymentStatusParams implements ParamRequest {
 
     private Boolean returnOperations;
 
@@ -38,7 +38,7 @@ public class GetRefundParams implements ParamRequest {
      * If true, the response will contain the operations of the payment.
      * False by default.
      */
-    public GetRefundParams withReturnOperations(Boolean value) {
+    public GetPaymentStatusParams withReturnOperations(Boolean value) {
         this.returnOperations = value;
         return this;
     }

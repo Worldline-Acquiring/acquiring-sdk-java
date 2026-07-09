@@ -33,21 +33,21 @@ public class AddressVerificationData {
     }
 
     /**
-     * Cardholder postal code, should be provided without spaces
+     * Cardholder postal code
      */
     public String getCardholderPostalCode() {
         return cardholderPostalCode;
     }
 
     /**
-     * Cardholder postal code, should be provided without spaces
+     * Cardholder postal code
      */
     public void setCardholderPostalCode(String value) {
         this.cardholderPostalCode = value;
     }
 
     /**
-     * Cardholder postal code, should be provided without spaces
+     * Cardholder postal code
      */
     public AddressVerificationData withCardholderPostalCode(String value) {
         this.cardholderPostalCode = value;

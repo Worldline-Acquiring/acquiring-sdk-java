@@ -10,6 +10,8 @@ public class ApiPaymentRequest {
 
     private AmountData amount;
 
+    private AmountBreakdownData amountBreakdownData;
+
     private String authorizationType;
 
     private CardPaymentData cardPaymentData;
@@ -45,6 +47,37 @@ public class ApiPaymentRequest {
      */
     public ApiPaymentRequest withAmount(AmountData value) {
         this.amount = value;
+        return this;
+    }
+
+    /**
+     * Additional data regarding the breakdown of the transaction amount. This can include amounts
+     * such as tip or cashback.
+     * The amounts specified are included in the total transaction {@code amount}, the information is provided
+     * for data enrichment and reconciliation purposes.
+     */
+    public AmountBreakdownData getAmountBreakdownData() {
+        return amountBreakdownData;
+    }
+
+    /**
+     * Additional data regarding the breakdown of the transaction amount. This can include amounts
+     * such as tip or cashback.
+     * The amounts specified are included in the total transaction {@code amount}, the information is provided
+     * for data enrichment and reconciliation purposes.
+     */
+    public void setAmountBreakdownData(AmountBreakdownData value) {
+        this.amountBreakdownData = value;
+    }
+
+    /**
+     * Additional data regarding the breakdown of the transaction amount. This can include amounts
+     * such as tip or cashback.
+     * The amounts specified are included in the total transaction {@code amount}, the information is provided
+     * for data enrichment and reconciliation purposes.
+     */
+    public ApiPaymentRequest withAmountBreakdownData(AmountBreakdownData value) {
+        this.amountBreakdownData = value;
         return this;
     }
 
