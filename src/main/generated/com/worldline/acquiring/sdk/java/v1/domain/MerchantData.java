@@ -12,13 +12,21 @@ public class MerchantData {
 
     private String countryCode;
 
+    private CustomerServiceData customerServiceData;
+
     private Integer merchantCategoryCode;
 
     private String name;
 
+    private String paymentFacilitatorId;
+
     private String postalCode;
 
     private String stateCode;
+
+    private String subMerchantId;
+
+    private String taxId;
 
     /**
      * Street address
@@ -87,6 +95,28 @@ public class MerchantData {
     }
 
     /**
+     * Customer Service Data
+     */
+    public CustomerServiceData getCustomerServiceData() {
+        return customerServiceData;
+    }
+
+    /**
+     * Customer Service Data
+     */
+    public void setCustomerServiceData(CustomerServiceData value) {
+        this.customerServiceData = value;
+    }
+
+    /**
+     * Customer Service Data
+     */
+    public MerchantData withCustomerServiceData(CustomerServiceData value) {
+        this.customerServiceData = value;
+        return this;
+    }
+
+    /**
      * Merchant category code (MCC)
      */
     public Integer getMerchantCategoryCode() {
@@ -131,6 +161,28 @@ public class MerchantData {
     }
 
     /**
+     * Payment Facilitator identifier as assigned by Worldline
+     */
+    public String getPaymentFacilitatorId() {
+        return paymentFacilitatorId;
+    }
+
+    /**
+     * Payment Facilitator identifier as assigned by Worldline
+     */
+    public void setPaymentFacilitatorId(String value) {
+        this.paymentFacilitatorId = value;
+    }
+
+    /**
+     * Payment Facilitator identifier as assigned by Worldline
+     */
+    public MerchantData withPaymentFacilitatorId(String value) {
+        this.paymentFacilitatorId = value;
+        return this;
+    }
+
+    /**
      * Address postal code
      */
     public String getPostalCode() {
@@ -171,6 +223,53 @@ public class MerchantData {
      */
     public MerchantData withStateCode(String value) {
         this.stateCode = value;
+        return this;
+    }
+
+    /**
+     * Sub-merchant identifier in the context of a Payment Facilitator.
+     */
+    public String getSubMerchantId() {
+        return subMerchantId;
+    }
+
+    /**
+     * Sub-merchant identifier in the context of a Payment Facilitator.
+     */
+    public void setSubMerchantId(String value) {
+        this.subMerchantId = value;
+    }
+
+    /**
+     * Sub-merchant identifier in the context of a Payment Facilitator.
+     */
+    public MerchantData withSubMerchantId(String value) {
+        this.subMerchantId = value;
+        return this;
+    }
+
+    /**
+     * Applicable for Payment Facilitator submerchants located in France, Belgium or Luxembourg &amp;
+     * having a valid national SIRET/Tax ID when using Bambora as the acquirer.
+     */
+    public String getTaxId() {
+        return taxId;
+    }
+
+    /**
+     * Applicable for Payment Facilitator submerchants located in France, Belgium or Luxembourg &amp;
+     * having a valid national SIRET/Tax ID when using Bambora as the acquirer.
+     */
+    public void setTaxId(String value) {
+        this.taxId = value;
+    }
+
+    /**
+     * Applicable for Payment Facilitator submerchants located in France, Belgium or Luxembourg &amp;
+     * having a valid national SIRET/Tax ID when using Bambora as the acquirer.
+     */
+    public MerchantData withTaxId(String value) {
+        this.taxId = value;
         return this;
     }
 }

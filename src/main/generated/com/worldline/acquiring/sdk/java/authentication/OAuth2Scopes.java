@@ -37,6 +37,13 @@ public final class OAuth2Scopes {
         v1Scopes.put("technicalReversal", new LinkedHashSet<>(Arrays.asList("processing_operation_reverse")));
         v1Scopes.put("requestDccRate", new LinkedHashSet<>(Arrays.asList("processing_dcc_rate")));
         v1Scopes.put("ping", new LinkedHashSet<>(Arrays.asList("services_ping")));
+        v1Scopes.put("searchDisputes", new LinkedHashSet<>(Arrays.asList("disputes_retrieve")));
+        v1Scopes.put("getDispute", new LinkedHashSet<>(Arrays.asList("disputes_retrieve")));
+        v1Scopes.put("acceptDisputeLiability", new LinkedHashSet<>(Arrays.asList("disputes_manage")));
+        v1Scopes.put("submitEvidence", new LinkedHashSet<>(Arrays.asList("disputes_manage")));
+        v1Scopes.put("uploadDisputeDocument", new LinkedHashSet<>(Arrays.asList("disputes_manage")));
+        v1Scopes.put("getDisputeDocument", new LinkedHashSet<>(Arrays.asList("disputes_retrieve")));
+        v1Scopes.put("searchDisputeEntries", new LinkedHashSet<>(Arrays.asList("disputes_retrieve")));
         scopesByOperation.put("v1", v1Scopes);
 
         SCOPES_BY_OPERATION = Collections.unmodifiableMap(scopesByOperation);

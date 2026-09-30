@@ -18,6 +18,8 @@ public class TerminalData {
 
     private Boolean isOfflineApproved;
 
+    private String mposDevice;
+
     private String offlineAuthorizationResponseCode;
 
     private String pinEntryCapability;
@@ -136,6 +138,43 @@ public class TerminalData {
      */
     public TerminalData withIsOfflineApproved(Boolean value) {
         this.isOfflineApproved = value;
+        return this;
+    }
+
+    /**
+     * The type of device (mobile POS) used by the merchant as the terminal for accepting mPOS.
+     * Possible values are:
+     * <ul>
+     *   <li>MPOS_TERMINAL_WITH_PCI_DONGLE - Merchant uses a POS terminal with a PCI dongle</li>
+     *   <li>COMMERCIAL_OFF_THE_SHELF - Commercial off-the-shelf device</li>
+     * </ul>
+     */
+    public String getMposDevice() {
+        return mposDevice;
+    }
+
+    /**
+     * The type of device (mobile POS) used by the merchant as the terminal for accepting mPOS.
+     * Possible values are:
+     * <ul>
+     *   <li>MPOS_TERMINAL_WITH_PCI_DONGLE - Merchant uses a POS terminal with a PCI dongle</li>
+     *   <li>COMMERCIAL_OFF_THE_SHELF - Commercial off-the-shelf device</li>
+     * </ul>
+     */
+    public void setMposDevice(String value) {
+        this.mposDevice = value;
+    }
+
+    /**
+     * The type of device (mobile POS) used by the merchant as the terminal for accepting mPOS.
+     * Possible values are:
+     * <ul>
+     *   <li>MPOS_TERMINAL_WITH_PCI_DONGLE - Merchant uses a POS terminal with a PCI dongle</li>
+     *   <li>COMMERCIAL_OFF_THE_SHELF - Commercial off-the-shelf device</li>
+     * </ul>
+     */
+    public TerminalData withMposDevice(String value) {
+        this.mposDevice = value;
         return this;
     }
 

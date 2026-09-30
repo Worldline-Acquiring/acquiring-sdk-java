@@ -10,13 +10,11 @@ public class PointOfSaleData {
 
     private List<EmvDataItem> emvData;
 
-    private String encryptedPinBlock;
-
     private Boolean isResponseToPinRequest;
 
     private Boolean isRetryWithTheSameOperationId;
 
-    private String pinMasterKeyReference;
+    private OnlinePinData onlinePinData;
 
     private String track2Data;
 
@@ -42,28 +40,6 @@ public class PointOfSaleData {
      */
     public PointOfSaleData withEmvData(List<EmvDataItem> value) {
         this.emvData = value;
-        return this;
-    }
-
-    /**
-     * Encrypted data containing a PIN
-     */
-    public String getEncryptedPinBlock() {
-        return encryptedPinBlock;
-    }
-
-    /**
-     * Encrypted data containing a PIN
-     */
-    public void setEncryptedPinBlock(String value) {
-        this.encryptedPinBlock = value;
-    }
-
-    /**
-     * Encrypted data containing a PIN
-     */
-    public PointOfSaleData withEncryptedPinBlock(String value) {
-        this.encryptedPinBlock = value;
         return this;
     }
 
@@ -112,24 +88,33 @@ public class PointOfSaleData {
     }
 
     /**
-     * Reference to the master key used to encrypt the PIN
+     * In case of online PIN verification, send this object with the appropriate values.
+     * <p>
+     * Depending on the acquirer, different PIN encryption types are supported. Please check with your
+     * Worldline contact which encryption type is supported for your account.
      */
-    public String getPinMasterKeyReference() {
-        return pinMasterKeyReference;
+    public OnlinePinData getOnlinePinData() {
+        return onlinePinData;
     }
 
     /**
-     * Reference to the master key used to encrypt the PIN
+     * In case of online PIN verification, send this object with the appropriate values.
+     * <p>
+     * Depending on the acquirer, different PIN encryption types are supported. Please check with your
+     * Worldline contact which encryption type is supported for your account.
      */
-    public void setPinMasterKeyReference(String value) {
-        this.pinMasterKeyReference = value;
+    public void setOnlinePinData(OnlinePinData value) {
+        this.onlinePinData = value;
     }
 
     /**
-     * Reference to the master key used to encrypt the PIN
+     * In case of online PIN verification, send this object with the appropriate values.
+     * <p>
+     * Depending on the acquirer, different PIN encryption types are supported. Please check with your
+     * Worldline contact which encryption type is supported for your account.
      */
-    public PointOfSaleData withPinMasterKeyReference(String value) {
-        this.pinMasterKeyReference = value;
+    public PointOfSaleData withOnlinePinData(OnlinePinData value) {
+        this.onlinePinData = value;
         return this;
     }
 

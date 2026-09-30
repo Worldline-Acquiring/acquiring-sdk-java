@@ -12,6 +12,8 @@ public class ApiCaptureRequest {
 
     private CaptureAmountBreakdownData captureAmountBreakdownData;
 
+    private CapturePointOfSaleData capturePointOfSaleData;
+
     private Integer captureSequenceNumber;
 
     private DccData dynamicCurrencyConversion;
@@ -75,6 +77,19 @@ public class ApiCaptureRequest {
      */
     public ApiCaptureRequest withCaptureAmountBreakdownData(CaptureAmountBreakdownData value) {
         this.captureAmountBreakdownData = value;
+        return this;
+    }
+
+    public CapturePointOfSaleData getCapturePointOfSaleData() {
+        return capturePointOfSaleData;
+    }
+
+    public void setCapturePointOfSaleData(CapturePointOfSaleData value) {
+        this.capturePointOfSaleData = value;
+    }
+
+    public ApiCaptureRequest withCapturePointOfSaleData(CapturePointOfSaleData value) {
+        this.capturePointOfSaleData = value;
         return this;
     }
 

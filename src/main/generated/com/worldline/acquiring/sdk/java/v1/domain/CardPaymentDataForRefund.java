@@ -20,6 +20,8 @@ public class CardPaymentDataForRefund {
 
     private NetworkTokenData networkTokenData;
 
+    private OriginalTransactionReferences originalTransactionReferences;
+
     private PointOfSaleData pointOfSaleData;
 
     private String walletId;
@@ -193,6 +195,28 @@ public class CardPaymentDataForRefund {
 
     public CardPaymentDataForRefund withNetworkTokenData(NetworkTokenData value) {
         this.networkTokenData = value;
+        return this;
+    }
+
+    /**
+     * References to the original transaction
+     */
+    public OriginalTransactionReferences getOriginalTransactionReferences() {
+        return originalTransactionReferences;
+    }
+
+    /**
+     * References to the original transaction
+     */
+    public void setOriginalTransactionReferences(OriginalTransactionReferences value) {
+        this.originalTransactionReferences = value;
+    }
+
+    /**
+     * References to the original transaction
+     */
+    public CardPaymentDataForRefund withOriginalTransactionReferences(OriginalTransactionReferences value) {
+        this.originalTransactionReferences = value;
         return this;
     }
 

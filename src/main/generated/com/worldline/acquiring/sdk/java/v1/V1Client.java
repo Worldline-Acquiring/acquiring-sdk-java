@@ -9,6 +9,9 @@ import java.util.TreeMap;
 
 import com.worldline.acquiring.sdk.java.ApiResource;
 import com.worldline.acquiring.sdk.java.v1.acquirer.AcquirerClient;
+import com.worldline.acquiring.sdk.java.v1.disputedocuments.DisputeDocumentsClient;
+import com.worldline.acquiring.sdk.java.v1.disputeentries.DisputeEntriesClient;
+import com.worldline.acquiring.sdk.java.v1.disputemanagement.DisputeManagementClient;
 import com.worldline.acquiring.sdk.java.v1.ping.PingClient;
 
 /**
@@ -39,5 +42,32 @@ public class V1Client extends ApiResource {
      */
     public PingClient ping() {
         return new PingClient(this, null);
+    }
+
+    /**
+     * Resource /dispute-management/v1/disputes/search
+     *
+     * @return DisputeManagementClient
+     */
+    public DisputeManagementClient disputeManagement() {
+        return new DisputeManagementClient(this, null);
+    }
+
+    /**
+     * Resource /dispute-management/v1/documents
+     *
+     * @return DisputeDocumentsClient
+     */
+    public DisputeDocumentsClient disputeDocuments() {
+        return new DisputeDocumentsClient(this, null);
+    }
+
+    /**
+     * Resource /dispute-management/v1/dispute-entries/search
+     *
+     * @return DisputeEntriesClient
+     */
+    public DisputeEntriesClient disputeEntries() {
+        return new DisputeEntriesClient(this, null);
     }
 }
