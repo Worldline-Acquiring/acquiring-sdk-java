@@ -141,24 +141,36 @@ public class ApiCaptureRequest {
     }
 
     /**
-     * Indicates whether this partial capture is the final one.<br>
-     * Not needed for full capture.
+     * Indicates whether this partial capture is the final one. When set to
+     * {@code true}, the part of the authorization that was not captured is released.
+     * Not needed for a full capture.
+     * <p>
+     * Note: the default value of {@code false} is not intuitive. Please send always a
+     * value and don't rely on the default, it might change with the next major API version
      */
     public Boolean getIsFinal() {
         return isFinal;
     }
 
     /**
-     * Indicates whether this partial capture is the final one.<br>
-     * Not needed for full capture.
+     * Indicates whether this partial capture is the final one. When set to
+     * {@code true}, the part of the authorization that was not captured is released.
+     * Not needed for a full capture.
+     * <p>
+     * Note: the default value of {@code false} is not intuitive. Please send always a
+     * value and don't rely on the default, it might change with the next major API version
      */
     public void setIsFinal(Boolean value) {
         this.isFinal = value;
     }
 
     /**
-     * Indicates whether this partial capture is the final one.<br>
-     * Not needed for full capture.
+     * Indicates whether this partial capture is the final one. When set to
+     * {@code true}, the part of the authorization that was not captured is released.
+     * Not needed for a full capture.
+     * <p>
+     * Note: the default value of {@code false} is not intuitive. Please send always a
+     * value and don't rely on the default, it might change with the next major API version
      */
     public ApiCaptureRequest withIsFinal(Boolean value) {
         this.isFinal = value;

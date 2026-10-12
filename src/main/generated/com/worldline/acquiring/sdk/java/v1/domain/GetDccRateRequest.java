@@ -4,11 +4,15 @@
 
 package com.worldline.acquiring.sdk.java.v1.domain;
 
+import java.time.LocalDate;
+
 public class GetDccRateRequest {
 
     private CardDataForDcc cardPaymentData;
 
     private String operationId;
+
+    private LocalDate originalPaymentDate;
 
     private PointOfSaleDataForDcc pointOfSaleData;
 
@@ -65,6 +69,37 @@ public class GetDccRateRequest {
         return this;
     }
 
+    /**
+     * The date of the original payment.
+     * Our system will try to return the original rate associated with the provided {@code originalPaymentDate}, but
+     * it may not always be possible to retrieve the exact original rate. If possible you should use
+     * {@code rateReferenceId} instead.
+     */
+    public LocalDate getOriginalPaymentDate() {
+        return originalPaymentDate;
+    }
+
+    /**
+     * The date of the original payment.
+     * Our system will try to return the original rate associated with the provided {@code originalPaymentDate}, but
+     * it may not always be possible to retrieve the exact original rate. If possible you should use
+     * {@code rateReferenceId} instead.
+     */
+    public void setOriginalPaymentDate(LocalDate value) {
+        this.originalPaymentDate = value;
+    }
+
+    /**
+     * The date of the original payment.
+     * Our system will try to return the original rate associated with the provided {@code originalPaymentDate}, but
+     * it may not always be possible to retrieve the exact original rate. If possible you should use
+     * {@code rateReferenceId} instead.
+     */
+    public GetDccRateRequest withOriginalPaymentDate(LocalDate value) {
+        this.originalPaymentDate = value;
+        return this;
+    }
+
     public PointOfSaleDataForDcc getPointOfSaleData() {
         return pointOfSaleData;
     }
@@ -80,8 +115,13 @@ public class GetDccRateRequest {
 
     /**
      * The reference of a previously used rate<br>
-     * This can be used in case of refund if you want to use the same rate
-     * as the original transaction.
+     * This can be used in case of any follow-up action for which you want to reference the original rate.
+     * Our system will try to return the original rate associated with the provided {@code rateReferenceId}.
+     * <p>
+     * Alternatively you can provide {@code originalPaymentDate} to reference the date of the original payment.
+     * Our system will try to return the original rate associated with the provided {@code originalPaymentDate}, but
+     * it may not always be possible to retrieve the exact original rate. If possible you should use
+     * {@code rateReferenceId} instead.
      */
     public String getRateReferenceId() {
         return rateReferenceId;
@@ -89,8 +129,13 @@ public class GetDccRateRequest {
 
     /**
      * The reference of a previously used rate<br>
-     * This can be used in case of refund if you want to use the same rate
-     * as the original transaction.
+     * This can be used in case of any follow-up action for which you want to reference the original rate.
+     * Our system will try to return the original rate associated with the provided {@code rateReferenceId}.
+     * <p>
+     * Alternatively you can provide {@code originalPaymentDate} to reference the date of the original payment.
+     * Our system will try to return the original rate associated with the provided {@code originalPaymentDate}, but
+     * it may not always be possible to retrieve the exact original rate. If possible you should use
+     * {@code rateReferenceId} instead.
      */
     public void setRateReferenceId(String value) {
         this.rateReferenceId = value;
@@ -98,8 +143,13 @@ public class GetDccRateRequest {
 
     /**
      * The reference of a previously used rate<br>
-     * This can be used in case of refund if you want to use the same rate
-     * as the original transaction.
+     * This can be used in case of any follow-up action for which you want to reference the original rate.
+     * Our system will try to return the original rate associated with the provided {@code rateReferenceId}.
+     * <p>
+     * Alternatively you can provide {@code originalPaymentDate} to reference the date of the original payment.
+     * Our system will try to return the original rate associated with the provided {@code originalPaymentDate}, but
+     * it may not always be possible to retrieve the exact original rate. If possible you should use
+     * {@code rateReferenceId} instead.
      */
     public GetDccRateRequest withRateReferenceId(String value) {
         this.rateReferenceId = value;

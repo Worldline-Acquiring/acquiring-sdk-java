@@ -218,8 +218,12 @@ public class SearchDisputesRequest {
     }
 
     /**
-     * Reference for the transaction to allow the merchant to reconcile their payments in our report files
-     * and in their disputes.<br>
+     * Custom text provided by the merchant that appears on their own settlement
+     * reports and on the reimbursement notices from the acquirer.
+     * <p>
+     * It allows the merchant to reconcile their payments in our report files
+     * and in their disputes.
+     * <p>
      * It is advised to submit a unique value per transaction.<br>
      * The value is returned in the baseTrxType/addlMercData element of the MRX file.
      */
@@ -228,8 +232,12 @@ public class SearchDisputesRequest {
     }
 
     /**
-     * Reference for the transaction to allow the merchant to reconcile their payments in our report files
-     * and in their disputes.<br>
+     * Custom text provided by the merchant that appears on their own settlement
+     * reports and on the reimbursement notices from the acquirer.
+     * <p>
+     * It allows the merchant to reconcile their payments in our report files
+     * and in their disputes.
+     * <p>
      * It is advised to submit a unique value per transaction.<br>
      * The value is returned in the baseTrxType/addlMercData element of the MRX file.
      */
@@ -238,8 +246,12 @@ public class SearchDisputesRequest {
     }
 
     /**
-     * Reference for the transaction to allow the merchant to reconcile their payments in our report files
-     * and in their disputes.<br>
+     * Custom text provided by the merchant that appears on their own settlement
+     * reports and on the reimbursement notices from the acquirer.
+     * <p>
+     * It allows the merchant to reconcile their payments in our report files
+     * and in their disputes.
+     * <p>
      * It is advised to submit a unique value per transaction.<br>
      * The value is returned in the baseTrxType/addlMercData element of the MRX file.
      */
