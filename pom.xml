@@ -5,7 +5,7 @@
 
     <groupId>com.worldline-solutions.acquiring</groupId>
     <artifactId>acquiring-sdk-java</artifactId>
-    <version>3.1.0</version>
+    <version>4.0.0</version>
     <packaging>jar</packaging>
 
     <name>acquiring-sdk-java</name>
@@ -47,11 +47,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
 
         <version.httpclient>4.5.14</version.httpclient>
         <version.httpmime>4.5.14</version.httpmime>
+        <version.mockwebserver>4.12.0</version.mockwebserver>
     </properties>
 
     <build>
@@ -299,7 +299,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.6.0</version>
                 <configuration>
                     <configLocation>${project.basedir}/checkstyle.xml</configLocation>
                     <includeResources>true</includeResources>
@@ -322,7 +322,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>9.3</version>
+                        <version>12.3.1</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -341,7 +341,7 @@
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.10.1</version>
+            <version>2.14.0</version>
         </dependency>
 
         <dependency>
@@ -367,21 +367,28 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.10.2</version>
+            <version>5.14.4</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
-            <version>2.2</version>
+            <version>3.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>4.11.0</version>
+            <version>5.24.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>mockwebserver</artifactId>
+            <version>${version.mockwebserver}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -416,12 +423,11 @@
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.7.0</version>
+                        <version>0.12.0</version>
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
-                            <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/
-                            </centralSnapshotsUrl>
+                            <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</centralSnapshotsUrl>
                             <deploymentName>${project.artifactId}-${project.version}</deploymentName>
                             <autoPublish>true</autoPublish>
                             <waitUntil>published</waitUntil>
@@ -444,6 +450,32 @@
                             <includes>
                                 <include>/com/worldline/acquiring/sdk/java/it/**/*</include>
                             </includes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>dependency-check</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.owasp</groupId>
+                        <artifactId>dependency-check-maven</artifactId>
+                        <version>12.1.0</version>
+                        <configuration>
+                            <failBuildOnCVSS>9</failBuildOnCVSS>
+                            <formats>
+                                <format>JSON</format>
+                                <format>HTML</format>
+                            </formats>
+                            <nvdApiKeyEnvironmentVariable>NVD_API_KEY</nvdApiKeyEnvironmentVariable>
+                            <skipTestScope>true</skipTestScope>
+                            <skipProvidedScope>true</skipProvidedScope>
+                            <skipSystemScope>true</skipSystemScope>
+                            <ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
+                            <retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
+                            <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
                         </configuration>
                     </plugin>
                 </plugins>

@@ -20,6 +20,10 @@ This repository consists out of four main components:
 2. The source code of the SDK unit tests: `/src/test/java/`
 3. The source code of the integration tests: `/src/it/java/`
 
+## Requirements
+
+The SDK requires Java 17 or later.
+
 ## Installation
 
 Assuming you have [Maven](http://maven.apache.org/) installed, simply include the SDK as a Maven dependency:
